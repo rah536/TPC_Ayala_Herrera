@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPC_Ayala_Herrera", "TPC_Ayala_Herrera\TPC_Ayala_Herrera.csproj", "{D55D31FC-BBA4-467D-91CC-970BDF15B7C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{3FE5A9AB-CAEE-48A6-8B7C-EC1E4B7853C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{9B66D357-ED10-43BA-A362-2E2A7CFA5574}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{D55D31FC-BBA4-467D-91CC-970BDF15B7C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D55D31FC-BBA4-467D-91CC-970BDF15B7C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D55D31FC-BBA4-467D-91CC-970BDF15B7C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FE5A9AB-CAEE-48A6-8B7C-EC1E4B7853C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FE5A9AB-CAEE-48A6-8B7C-EC1E4B7853C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FE5A9AB-CAEE-48A6-8B7C-EC1E4B7853C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FE5A9AB-CAEE-48A6-8B7C-EC1E4B7853C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B66D357-ED10-43BA-A362-2E2A7CFA5574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B66D357-ED10-43BA-A362-2E2A7CFA5574}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B66D357-ED10-43BA-A362-2E2A7CFA5574}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B66D357-ED10-43BA-A362-2E2A7CFA5574}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

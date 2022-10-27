@@ -8,6 +8,7 @@
         </div>
         <div class="card-body">
             <h3>Body Productos</h3>
+            <asp:GridView ID="gvProductos" CssClass="table" runat="server"></asp:GridView>
         </div>
         <div class="card-footer">
             <h3>Footer Productos</h3>
