@@ -15,5 +15,6 @@ namespace Dominio
         public string Mail { get; set; }
         public string Telefono { get; set; }
         public float Precio { get; set; }
+        public bool Estado { get; set; }
     }
 }

@@ -19,5 +19,6 @@ namespace Dominio
         public int StockMinimo { get; set; }
         public float PorcentajeGanancia { get; set; }
         public string UrlImagen { get; set; }
+        public bool Estado { get; set; }
     }
 }
