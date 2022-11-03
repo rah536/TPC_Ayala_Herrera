@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class Cliente : Persona
+    public class Merchandising : Categoria
     {
-        public int NumCliente { get; set; }
+        public string Tamaño { get; set; }
+        public string Material { get; set; }
     }
 }

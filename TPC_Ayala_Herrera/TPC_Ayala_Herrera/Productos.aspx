@@ -4,14 +4,18 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div class="card text-center">
         <div class="card-header">
-            <h3>Header Productos</h3>
+            <h3>Listado de Productos</h3>
+            <div>
+                <asp:Button ID="btnAltaProducto" CssClass="btn btn-dark" runat="server" Text="Alta Producto" />
+            </div>
         </div>
+          
         <div class="card-body">
-            <h3>Body Productos</h3>
             <asp:GridView ID="gvProductos" CssClass="table table-striped" runat="server"></asp:GridView>
         </div>
+
         <div class="card-footer">
-            <h3>Footer Productos</h3>
+            
         </div>
     </div>
 </asp:Content>

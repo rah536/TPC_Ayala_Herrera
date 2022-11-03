@@ -11,16 +11,16 @@ namespace TPC_Ayala_Herrera
 {
 
 
-    public partial class Proveedores
+    public partial class Categorias
     {
 
         /// <summary>
-        /// Control btnAltaProveedor.
+        /// Control btnAltaCategoria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAltaProveedor;
+        protected global::System.Web.UI.WebControls.Button btnAltaCategoria;
     }
 }
