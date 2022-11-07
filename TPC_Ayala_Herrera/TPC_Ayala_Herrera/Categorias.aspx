@@ -12,7 +12,7 @@
         
 
         <div class="card-body">
-            
+            <asp:GridView ID="gvCategorias" CssClass="table table-striped" runat="server"></asp:GridView>
         </div>
 
         <div class="card-footer">
