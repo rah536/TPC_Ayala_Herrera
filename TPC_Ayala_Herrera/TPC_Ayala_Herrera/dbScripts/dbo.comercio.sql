@@ -35,3 +35,20 @@ VALUES
 (99,78,'Libros Harry Potter','BiblioMaster','Biblioteca',9654,16,21,3.5,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5hz8gmg9W9mzrgVni6qSBFV1No_rWA_EK7w&usqp=CAU'),
 (100,78,'Libros Lord of the Rings','BiblioMaster','Biblioteca',19374,9,2,3.5,'https://http2.mlstatic.com/D_NQ_NP_755931-MLA51914578740_102022-O.webp')
 
+
+create table Marca(
+	Id int not null PRIMARY KEY IDENTITY(1,1),
+	Descripcion varchar(50) not null,
+	Estado bit null
+)
+insert into Marca (Descripcion, Estado) Values ('Estrella Verde', 1), ('Macarroni Pizza', 1), ('Termi Door', 1)
+
+
+create table proveedores (
+
+id int not null primary key identity (1,1),
+razonSocial varchar(50),
+idProducto int null)
+
+insert into proveedores(razonSocial) Values ('Proveeduria los tacaños'), ('Almacen no positivo'), ('Fiado para todos')
+
