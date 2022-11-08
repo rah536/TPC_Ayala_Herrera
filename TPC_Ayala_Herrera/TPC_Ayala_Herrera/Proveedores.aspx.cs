@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,11 @@ namespace TPC_Ayala_Herrera
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+
+            ProveedorNegocio proveedornegocio    = new ProveedorNegocio();
+            gvProveedor.DataSource = proveedornegocio.listar();
+            gvProveedor.DataBind();
 
         }
     }
