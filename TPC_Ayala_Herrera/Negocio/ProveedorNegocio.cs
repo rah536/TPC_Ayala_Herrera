@@ -22,19 +22,11 @@ namespace Negocio
 				while (datos.Lector.Read())
 				{
 					Proveedor aux = new Proveedor();
-					aux.Id = (int)datos.Lector["Id"];
+					aux.IdProveedor = (int)datos.Lector["Id"];
 					aux.RazonSocial = (string)datos.Lector["razonSocial"];
-					if(datos.Lector["idProducto"] != null)
-					{
-						aux.IdProducto = (int)datos.Lector["idProducto"];
-
-
-                    }
-					else
-					{
-						aux.IdProducto = 0;
-
-					}
+					//	aux.IdProducto = (int)datos.Lector["idProducto"];
+					aux.IdProducto = 0;
+				
 					
 
 					lista.Add(aux);
