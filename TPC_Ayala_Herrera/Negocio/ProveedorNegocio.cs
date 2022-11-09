@@ -16,13 +16,13 @@ namespace Negocio
 			AccesoDatos datos = new AccesoDatos();
 			try
 			{
-				datos.setearConsulta("select id, razonSocial,idProducto from proveedor");
+				datos.setearConsulta("select idProveedor, razonSocial,idProducto from proveedor");
 				datos.ejecutarLectura();
 
 				while (datos.Lector.Read())
 				{
 					Proveedor aux = new Proveedor();
-					aux.IdProveedor = (int)datos.Lector["Id"];
+					aux.IdProveedor = (int)datos.Lector["IdProveedor"];
 					aux.RazonSocial = (string)datos.Lector["razonSocial"];
 					//	aux.IdProducto = (int)datos.Lector["idProducto"];
 					aux.IdProducto = 0;

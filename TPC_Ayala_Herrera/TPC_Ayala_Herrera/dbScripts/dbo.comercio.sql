@@ -42,13 +42,14 @@ create table Marca(
 	Estado bit null
 )
 insert into Marca (Descripcion, Estado) Values ('Estrella Verde', 1), ('Macarroni Pizza', 1), ('Termi Door', 1)
+use Comercio
+delete proveed
 
+create table proveedor (
 
-create table proveedores (
-
-id int not null primary key identity (1,1),
+idProveedor int not null primary key identity (1,1),
 razonSocial varchar(50),
 idProducto int null)
 
-insert into proveedores(razonSocial) Values ('Proveeduria los tacaños'), ('Almacen no positivo'), ('Fiado para todos')
+insert into proveedor(razonSocial) Values ('Proveeduria los tacaños'), ('Almacen no positivo'), ('Fiado para todos')
 
