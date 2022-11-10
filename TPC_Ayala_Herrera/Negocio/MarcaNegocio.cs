@@ -79,5 +79,24 @@ namespace Negocio
                 throw;
             }
         }
+        public void modificar(Marca marca)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("update Marca set Descripcion = '" + marca.Descripcion + "' where id = " + marca.Id + "");
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
 }
