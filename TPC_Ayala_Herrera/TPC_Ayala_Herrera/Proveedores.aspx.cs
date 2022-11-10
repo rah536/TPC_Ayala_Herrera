@@ -19,5 +19,15 @@ namespace TPC_Ayala_Herrera
             gvProveedor.DataBind();
 
         }
+
+        protected void btnAltaProveedor_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ProveedoresAlta.aspx",false);
+
+
+
+
+
+        }
     }
 }

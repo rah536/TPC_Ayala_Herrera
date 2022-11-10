@@ -11,25 +11,25 @@ namespace TPC_Ayala_Herrera
 {
 
 
-    public partial class Proveedores
+    public partial class WebForm1
     {
 
         /// <summary>
-        /// Control btnAltaProveedor.
+        /// Control tbRazonSocial.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAltaProveedor;
+        protected global::System.Web.UI.WebControls.TextBox tbRazonSocial;
 
         /// <summary>
-        /// Control gvProveedor.
+        /// Control btnAgregar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvProveedor;
+        protected global::System.Web.UI.WebControls.Button btnAgregar;
     }
 }

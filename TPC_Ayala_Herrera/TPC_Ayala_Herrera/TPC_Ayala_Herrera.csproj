@@ -75,6 +75,7 @@
     <Content Include="Proveedores.aspx" />
     <Content Include="Ventas.aspx" />
     <Content Include="Web.config" />
+    <Content Include="ProveedoresAlta.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Categorias.aspx.cs">
@@ -150,6 +151,13 @@
     </Compile>
     <Compile Include="Ventas.aspx.designer.cs">
       <DependentUpon>Ventas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProveedoresAlta.aspx.cs">
+      <DependentUpon>ProveedoresAlta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProveedoresAlta.aspx.designer.cs">
+      <DependentUpon>ProveedoresAlta.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

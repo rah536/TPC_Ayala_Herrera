@@ -6,14 +6,14 @@
         <div class="card-header">
             <h3>Listado Proveedores</h3>
              <div>
-                 <asp:Button ID="btnAltaProveedor" tooltipCssClass="btn btn-dark" runat="server" Text="Alta Proveedor" ToolTip="Alta nuevo proveedor" />
+                 <asp:Button ID="btnAltaProveedor" tooltipCssClass="btn btn-dark" runat="server" Text="Alta Proveedor" ToolTip="Alta nuevo proveedor" OnClick="btnAltaProveedor_Click"/>
          
 
 
             </div>
         </div>
          <div class="card-body col-6 m-auto">
-         <asp:GridView ID="gvProveedor" runat="server" CssClass="table table-striped" AutoGenerateColumns="false">
+         <asp:GridView ID="gvProveedor" runat="server" CssClass="table table-striped" >
            <Columns>
              <asp:BoundField Datafield ="idProveedor" HeaderText ="ID Proveedor"/>
              <asp:BoundField Datafield ="idProducto" HeaderText ="ID Producto"/>

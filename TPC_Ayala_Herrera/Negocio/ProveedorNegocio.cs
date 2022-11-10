@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Negocio
@@ -48,6 +49,44 @@ namespace Negocio
 
 
 
+
+
+
+
+		
 		}
+		
+		public void agregar(Proveedor proveedor)
+		{
+
+            AccesoDatos datos = new AccesoDatos();
+			try
+			{
+                datos.setearConsulta("insert into Proveedor (razonSocial) VALUES ('" + proveedor.RazonSocial + "')");
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
 	}
 }
