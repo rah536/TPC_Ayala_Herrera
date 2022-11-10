@@ -28,8 +28,8 @@ namespace Negocio
 					//	aux.IdProducto = (int)datos.Lector["idProducto"];
 					aux.Nombre = (string)datos.Lector["nombre"];
 					aux.Apellido = (string)datos.Lector["apellido"];
-					aux.Dni = (int)datos.Lector["dni"];
-					aux.Cuit = (int)datos.Lector["cuit"];
+					aux.Dni = (Int64)datos.Lector["dni"];
+					aux.Cuit = (Int64)datos.Lector["cuit"];
 					aux.Domicilio = (string)datos.Lector["domicilio"];
 					aux.Mail = (string)datos.Lector["mail"];
 					aux.Telefono = (string)datos.Lector["telefono"];
@@ -39,7 +39,7 @@ namespace Negocio
 					aux.IdProducto = 0;
 				
 					
-
+					
 					lista.Add(aux);
 				}
 
