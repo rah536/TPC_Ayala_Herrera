@@ -23,6 +23,7 @@ namespace TPC_Ayala_Herrera
         {
             var id = gvMarcas.SelectedRow.Cells[0].Text;
             //Redirigir a pagina para modificar
+            Response.Redirect("MarcasAlta.aspx?id=" + id, false);
         }
 
         protected void gvMarcas_RowDeleting(object sender, GridViewDeleteEventArgs e)
