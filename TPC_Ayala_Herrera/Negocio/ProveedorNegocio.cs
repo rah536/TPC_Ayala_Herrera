@@ -17,7 +17,7 @@ namespace Negocio
 			AccesoDatos datos = new AccesoDatos();
 			try
 			{
-				datos.setearConsulta("select idProveedor, razonSocial,idProducto from proveedor");
+				datos.setearConsulta("select idproveedor, razonSocial,Nombre,Apellido, dni, cuit, domicilio, mail, telefono,estado,idRol from proveedor");
 				datos.ejecutarLectura();
 
 				while (datos.Lector.Read())
@@ -26,6 +26,16 @@ namespace Negocio
 					aux.IdProveedor = (int)datos.Lector["IdProveedor"];
 					aux.RazonSocial = (string)datos.Lector["razonSocial"];
 					//	aux.IdProducto = (int)datos.Lector["idProducto"];
+					aux.Nombre = (string)datos.Lector["nombre"];
+					aux.Apellido = (string)datos.Lector["apellido"];
+					aux.Dni = (int)datos.Lector["dni"];
+					aux.Cuit = (int)datos.Lector["cuit"];
+					aux.Domicilio = (string)datos.Lector["domicilio"];
+					aux.Mail = (string)datos.Lector["mail"];
+					aux.Telefono = (string)datos.Lector["telefono"];
+					aux.Estado = (bool)datos.Lector["estado"];
+					aux.IdRol = (int)datos.Lector["idRol"];
+
 					aux.IdProducto = 0;
 				
 					
@@ -62,7 +72,8 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
 			try
 			{
-                datos.setearConsulta("insert into Proveedor (razonSocial) VALUES ('" + proveedor.RazonSocial + "')");
+                datos.setearConsulta("insert into Proveedor (razonSocial,Nombre,Apellido, dni, cuit, domicilio, mail, telefono,estado,idRol)" +
+                    " VALUES ('" + proveedor.RazonSocial + "' ,'"+proveedor.Nombre+"', '"+proveedor.Apellido+"', "+proveedor.Cuit+", '"+proveedor.Domicilio+"', '"+proveedor.Mail+"',"+proveedor.Telefono+", "+proveedor.Estado+","+proveedor.IdRol+")");
                 datos.ejecutarAccion();
             }
             catch (Exception ex)

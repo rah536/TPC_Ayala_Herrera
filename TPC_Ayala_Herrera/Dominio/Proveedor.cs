@@ -8,6 +8,8 @@ namespace Dominio
 {
     public class Proveedor : Persona
     {
+
+
         public int IdProveedor { get; set; }
         public int IdProducto { get; set; }
         public string RazonSocial { get; set; }

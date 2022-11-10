@@ -12,13 +12,11 @@
 
             </div>
         </div>
-         <div class="card-body col-6 m-auto">
+         <div class="card-body col-16 m-auto">
          <asp:GridView ID="gvProveedor" runat="server" CssClass="table table-striped" >
-           <Columns>
-             <asp:BoundField Datafield ="idProveedor" HeaderText ="ID Proveedor"/>
-             <asp:BoundField Datafield ="idProducto" HeaderText ="ID Producto"/>
-             <asp:BoundField Datafield ="razonSocial" HeaderText ="Razon Social"/>
-                  </Columns>
+
+           
+
          </asp:GridView>
         
              </div>

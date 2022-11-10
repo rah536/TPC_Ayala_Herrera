@@ -43,13 +43,77 @@ create table Marca(
 )
 insert into Marca (Descripcion, Estado) Values ('Estrella Verde', 1), ('Macarroni Pizza', 1), ('Termi Door', 1)
 use Comercio
-delete proveed
+
+select * from proveedor
 
 create table proveedor (
 
-idProveedor int not null primary key identity (1,1),
-razonSocial varchar(50),
-idProducto int null)
+	idProveedor int not null primary key identity (1,1),
+	razonSocial varchar(50),
+	idProducto int  null,
+	numeroCliente int  null,
+	Nombre varchar (50),
+	Apellido varchar (50),
+	dni bigint  null,
+	cuit bigint,
+	domicilio varchar (50),
+	mail varchar (50),
+	telefono varchar (50),
+	estado bit,
+	idRol int,
+	fechaAlta datetime
+)
 
-insert into proveedor(razonSocial) Values ('Proveeduria los tacaños'), ('Almacen no positivo'), ('Fiado para todos')
+insert into proveedor(razonSocial,Nombre,Apellido, dni, cuit, domicilio, mail, telefono,estado,idRol) Values 
+('Proveeduria los tacaños', 'Juan Claudio', 'Montesordo', 10546197, 20105461975, 'Antigua 351', 'montesano@aol.com', '6666777',1,3),
+('Almacen no positivo', 'Raul', 'Mandarinna',23647195,20236471950, 'Larralde 1890','raulinElcapo@hotcorreo.com.ar', '89994343', 1,3),
+('Fiado para todos', 'Cristiana', 'Ronalda', 31650942, 2731650942, 'Inyusticia 333','bebetoromario@siuuuu.com', '99991010',1,3)
+ 
+
+create table persona(
+	id int not null primary key identity (1,1),
+	Nombre varchar (50),
+	Apellido varchar (50),
+	dni int not null,
+	cuit int,
+	domicilio varchar (50),
+	mail varchar (50),
+	telefono varchar (50),
+	estado bit,
+	idRol int,
+	fechaAlta datetime
+)
+
+create table cliente(
+	numeroCliente int not null,
+	id int not null primary key identity (1,1),
+	Nombre varchar (50),
+	Apellido varchar (50),
+	dni int not null,
+	cuit int,
+	domicilio varchar (50),
+	mail varchar (50),
+	telefono varchar (50),
+	estado bit,
+	idRol int,
+	fechaAlta datetime
+)
+
+
+create table empleado(
+	numeroCliente int not null,
+	id int not null primary key identity (1,1),
+	Nombre varchar (50),
+	Apellido varchar (50),
+	dni int not null,
+	cuit int,
+	domicilio varchar (50),
+	mail varchar (50),
+	telefono varchar (50),
+	estado bit,
+	idRol int,
+	fechaAlta datetime
+)
+
+
 
