@@ -44,13 +44,13 @@ namespace Negocio
 
 
         }
-        public void agregar(Categoria categoria)
+        public void agregar(string categoria)
         {
             AccesoDatos datos = new AccesoDatos();
 
             try
             {
-                datos.setearConsulta("");
+                datos.setearConsulta("insert into Categoria (Descripcion, Estado) VALUES ('" + categoria + "', " + 1 + ")");
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
@@ -68,7 +68,7 @@ namespace Negocio
             try
             {
                 AccesoDatos datos = new AccesoDatos();
-                datos.setearConsulta("delete from articulos where id = @id");
+                datos.setearConsulta("delete from Categoria where id = @id");
                 datos.setearParametro("@id", id);
                 datos.ejecutarAccion();
             }
@@ -76,6 +76,26 @@ namespace Negocio
             {
 
                 throw;
+            }
+        }
+
+        public void modificar(Categoria categoria)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("update Categoria set Descripcion = '" + categoria.Descripcion + "' where id = " + categoria.Id + "");
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
             }
         }
     }
