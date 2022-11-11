@@ -23,6 +23,19 @@ namespace TPC_Ayala_Herrera
             Proveedor aux = new Proveedor();
 
             aux.RazonSocial = tbRazonSocial.Text;
+            aux.Nombre = tbNombre.Text;
+            aux.Apellido = tbApellido.Text;
+            aux.Dni = Convert.ToInt64(tbDni.Text);
+            aux.Cuit = Convert.ToInt64(tbCuit.Text);
+            aux.Domicilio = tbDomicilio.Text;
+            aux.Mail = tbMail.Text;
+            aux.Telefono = tbTelefono.Text;
+            aux.Estado = tbEstado.Text;
+            aux.IdRol = Convert.ToInt16(tbIdRol.Text);
+
+
+
+
 
 
             ProveedorNegocio proveedorNegocio = new ProveedorNegocio();

@@ -36,8 +36,8 @@
                 <asp:TextBox ID="tbDomicilio" runat="server" CssClass="form-text"></asp:TextBox><br>
                 <asp:Label ID="lbMail" runat="server" Text="Mail :   "></asp:Label>
                 <asp:TextBox ID="tbMail" runat="server" CssClass="form-text"></asp:TextBox><br>
-                <asp:Label ID="Label1" runat="server" Text="Domicilio :   "></asp:Label>
-                <asp:TextBox ID="TextBox1" runat="server" CssClass="form-text"></asp:TextBox><br>
+                <asp:Label ID="lbTelefono" runat="server" Text="Telefono :   "></asp:Label>
+                <asp:TextBox ID="tbTelefono" runat="server" CssClass="form-text"></asp:TextBox><br>
                 <asp:Label ID="lbEstado" runat="server" Text="Estado (0 - 1) :   "></asp:Label>
                 <asp:TextBox ID="tbEstado" runat="server" CssClass="form-text"></asp:TextBox><br>
                 <asp:Label ID="lbIDRol" runat="server" Text="Rol :   "></asp:Label>
@@ -51,7 +51,7 @@
 
 
 
-
+ </div>
 
             </div>
 

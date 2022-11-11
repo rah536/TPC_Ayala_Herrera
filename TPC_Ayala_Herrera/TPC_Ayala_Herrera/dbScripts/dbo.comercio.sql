@@ -6,6 +6,8 @@ use Comercio
 go
 
 --drop table productos
+--drop table marca
+--drop table proveedor
 create table Productos(
 Id INT not null PRIMARY KEY IDENTITY(1,1),
 Codigo int not null,
@@ -19,7 +21,7 @@ StockMinimo int not null,
 PorcentajeGanancia float not null,
 UrlImagen varchar (200) null)
 
-select * from productos
+
 
 use Comercio
 insert into productos
@@ -42,9 +44,9 @@ create table Marca(
 	Estado bit null
 )
 insert into Marca (Descripcion, Estado) Values ('Estrella Verde', 1), ('Macarroni Pizza', 1), ('Termi Door', 1)
-use Comercio
 
-select * from proveedor
+
+
 
 create table proveedor (
 
@@ -116,4 +118,15 @@ create table empleado(
 )
 
 
-
+         insert into Proveedor (razonSocial,Nombre,Apellido, dni, cuit, domicilio, mail, telefono,estado,idRol)
+                     VALUES ('cosa','arlando', 'barreda',234,3434,'peron2349', 'h@h.com','348883',1,3)
+					 
+					 select * from proveedor
+					 ('" + proveedor.RazonSocial + "'
+					 ,'"+proveedor.Nombre+"', 
+					 '"+proveedor.Apellido+"', "+proveedor.Cuit+",
+					 '"+proveedor.Domicilio+"', '"+proveedor.Mail+"',
+					 "+proveedor.Telefono+", 
+					 "+proveedor.Estado+",
+					 "+proveedor.IdRol+")");
+          
