@@ -30,7 +30,7 @@ namespace TPC_Ayala_Herrera
             aux.Domicilio = tbDomicilio.Text;
             aux.Mail = tbMail.Text;
             aux.Telefono = tbTelefono.Text;
-            aux.Estado = tbEstado.Text;
+            aux.Estado = Convert.ToBoolean(Convert.ToInt16(tbEstado.Text));
             aux.IdRol = Convert.ToInt16(tbIdRol.Text);
 
 
