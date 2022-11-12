@@ -23,6 +23,7 @@ namespace TPC_Ayala_Herrera
                     if (item.Id.ToString() == Request.QueryString["id"].ToString())
                     {
                         txtDescripcion.Text = item.Descripcion;
+
                     }
                 }
             }

@@ -8,6 +8,7 @@ go
 --drop table productos
 --drop table marca
 --drop table proveedor
+--
 create table Productos(
 Id INT not null PRIMARY KEY IDENTITY(1,1),
 Codigo int not null,
@@ -21,9 +22,6 @@ StockMinimo int not null,
 PorcentajeGanancia float not null,
 UrlImagen varchar (200) null)
 
-
-
-use Comercio
 insert into productos
 (Codigo, IdProveedor, Descripcion, Marca, Categoria, Costo, StockActual, StockMinimo, PorcentajeGanancia, UrlImagen)
 VALUES 
@@ -37,7 +35,7 @@ VALUES
 (99,78,'Libros Harry Potter','BiblioMaster','Biblioteca',9654,16,21,3.5,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5hz8gmg9W9mzrgVni6qSBFV1No_rWA_EK7w&usqp=CAU'),
 (100,78,'Libros Lord of the Rings','BiblioMaster','Biblioteca',19374,9,2,3.5,'https://http2.mlstatic.com/D_NQ_NP_755931-MLA51914578740_102022-O.webp')
 
-
+--
 create table Marca(
 	Id int not null PRIMARY KEY IDENTITY(1,1),
 	Descripcion varchar(50) not null,
@@ -45,11 +43,9 @@ create table Marca(
 )
 insert into Marca (Descripcion, Estado) Values ('Estrella Verde', 1), ('Macarroni Pizza', 1), ('Termi Door', 1)
 
-
-
+--
 
 create table proveedor (
-
 	idProveedor int not null primary key identity (1,1),
 	razonSocial varchar(50),
 	idProducto int  null,
@@ -71,6 +67,7 @@ insert into proveedor(razonSocial,Nombre,Apellido, dni, cuit, domicilio, mail, t
 ('Almacen no positivo', 'Raul', 'Mandarinna',23647195,20236471950, 'Larralde 1890','raulinElcapo@hotcorreo.com.ar', '89994343', 1,3),
 ('Fiado para todos', 'Cristiana', 'Ronalda', 31650942, 2731650942, 'Inyusticia 333','bebetoromario@siuuuu.com', '99991010',1,3)
  
+--
 
 create table persona(
 	id int not null primary key identity (1,1),
@@ -86,24 +83,28 @@ create table persona(
 	fechaAlta datetime
 )
 
-create table cliente(
-	numeroCliente int not null,
-	id int not null primary key identity (1,1),
+--
+
+Create Table Cliente(
+	Id int not null primary key identity (1,1),
 	Nombre varchar (50),
 	Apellido varchar (50),
-	dni int not null,
-	cuit int,
-	domicilio varchar (50),
-	mail varchar (50),
+	Dni bigint not null,
+	Cuit bigint,
+	Domicilio varchar (50),
+	Mail varchar (50),
 	telefono varchar (50),
 	estado bit,
-	idRol int,
-	fechaAlta datetime
+	IdRol int,
+	FechaAlta datetime,
+	NumeroCliente int not null
 )
 
+insert into Cliente (Nombre,Apellido, Dni, Cuit, Domicilio, Mail, Telefono, Estado, IdRol, FechaAlta, NumeroCliente) VALUES ('Jose Eduardo','Martinez', 37370566, 20373705660,'A. Contreras 1860 Quilmes', 'je@gmail.com', '',1,2,11/10/2022,1001)
+
+--
 
 create table empleado(
-	numeroCliente int not null,
 	id int not null primary key identity (1,1),
 	Nombre varchar (50),
 	Apellido varchar (50),
@@ -118,15 +119,58 @@ create table empleado(
 )
 
 
-         insert into Proveedor (razonSocial,Nombre,Apellido, dni, cuit, domicilio, mail, telefono,estado,idRol)
-                     VALUES ('cosa','arlando', 'barreda',234,3434,'peron2349', 'h@h.com','348883',1,3)
-					 
-					 select * from proveedor
-					 ('" + proveedor.RazonSocial + "'
-					 ,'"+proveedor.Nombre+"', 
-					 '"+proveedor.Apellido+"', "+proveedor.Cuit+",
-					 '"+proveedor.Domicilio+"', '"+proveedor.Mail+"',
-					 "+proveedor.Telefono+", 
-					 "+proveedor.Estado+",
-					 "+proveedor.IdRol+")");
+			 
+	
+
+
+--________________________________
+create table Categoria(
+	Id int not null PRIMARY KEY IDENTITY(1,1),
+	Descripcion varchar(50) not null,
+	Estado bit
+)
+--
+Create Table Merchandising (
+    IdCategoria int Foreign Key References Categoria(Id),
+	Material varchar(50),
+	Tamaño varchar(50)
+);
+
+Insert into Merchandising Values (2, 'POLYSTONE', '22 cm')
+
+
+
+--
+Create Table Indumentaria(
+	IdCategoria int Foreign Key References Categoria(Id),
+	Genero varchar(10),
+	Color varchar(20),
+	Talle varchar(5)
+);
+
+Insert into Indumentaria Values (1, 'Femenino', 'Blanco', 'XL')
+
+--
+
+Create Table Biblioteca(
+	IdCategoria int Foreign Key References Categoria(Id),
+	Autor varchar(100),
+	Editorial varchar(30),
+	Tapa varchar(20),
+	FechaPublicacion date
+);
           
+Insert into Biblioteca Values (3, 'Frank Miller', 'Comicoso', 'Dura', '2020')
+
+--
+
+Create Table Rol(
+	Id int primary key identity(1,1),
+	Descripcion varchar(50) not null,
+	Estado bit null
+);
+
+insert into Rol (Descripcion, Estado) VALUES ('Empleado', 1), ('Cliente', 1),('Proveedor', 1),('Administrador', 1)
+
+--
+
