@@ -3,10 +3,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
       <div class="card text-center">
-        <div class="card-header">
-            <h3>Listado de Clientes</h3>
+        <div class="card-header bg-transparent">
             <div>
-                <asp:Button ID="btnAltaCliente" CssClass="btn btn-dark" runat="server" Text="Alta Cliente" OnClick="btnAltaCliente_Click" />
+                <h2>Listado de Clientes</h2>
+            </div>
+            <div class="p-3">
+                <asp:Button ID="btnAltaCliente" CssClass="btn btn-dark btn-lg" runat="server" Text="Alta de Cliente" OnClick="btnAltaCliente_Click" />
             </div>
         </div>
         

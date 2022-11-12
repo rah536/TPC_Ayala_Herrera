@@ -3,14 +3,15 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="card text-center">
-        <div class="card-header">
-            <h3>Listado de Categorias</h3>
-             <div>
-                <asp:Button ID="btnAltaCategoria" CssClass="btn btn-dark" runat="server" Text="Alta de Categoría" OnClick="btnAltaCategoria_Click" />
+        <div class="card-header bg-transparent">
+            <div>
+                <h2>Listado de Categorías</h2>
+            </div>
+             <div class="p-3">
+                <asp:Button ID="btnAltaCategoria" CssClass="btn btn-dark btn-lg" runat="server" Text="Alta de Categoría" OnClick="btnAltaCategoria_Click" />
             </div>
         </div>
         
-
         <div class="card-body col-6 m-auto">
             <asp:GridView ID="gvCategorias" OnSelectedIndexChanged="gvCategorias_SelectedIndexChanged" OnRowDeleting="gvCategorias_RowDeleting" CssClass="table table-striped" AutoGenerateColumns="false" runat="server">
                 <Columns>
