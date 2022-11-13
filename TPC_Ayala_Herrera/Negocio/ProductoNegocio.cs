@@ -17,7 +17,8 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("Select Id, Codigo, IdProveedor, Descripcion, Marca, Categoria, Costo, StockActual, StockMinimo, PorcentajeGanancia, UrlImagen from Productos");
+                //datos.setearConsulta("Select Id, Codigo, IdProveedor, Descripcion, Marca, Categoria, Costo, StockActual, StockMinimo, PorcentajeGanancia, UrlImagen from Productos");
+                datos.setearConsulta("Select Prod.Id, Prod.Codigo, prov.razonSocial as razonSocial, Prod.Descripcion, Mar.Descripcion as Marca, Cat.Descripcion as Categoria, Prod.CostoUnidad, Prod.StockActual, Prod.StockMinimo, Prod.PorcentajeGanancia, Prod.UrlImagen from Productos Prod Inner Join proveedor prov On Prod.IdProveedor = prov.idProveedor Inner Join Marca Mar On Mar.Id = Prod.IdMarca Inner Join Categoria Cat On Cat.Id = Prod.IdCategoria");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -25,16 +26,19 @@ namespace Negocio
                     Producto aux = new Producto();
                     aux.Id = (int)datos.Lector["Id"];
                     aux.Codigo = (int)datos.Lector["Codigo"];
-                    aux.IdProveedor = (int)datos.Lector["IdProveedor"];
+                    aux.Proveedor = new Proveedor();
+                    aux.Proveedor.RazonSocial = (string)datos.Lector["razonSocial"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
-                    aux.Marca = (string)datos.Lector["Marca"];
-                    aux.Categoria = (string)datos.Lector["Categoria"];
-                    aux.Costo = (float)Convert.ToDecimal(datos.Lector["Costo"]);
+                    aux.Marca = new Marca();
+                    aux.Marca.Descripcion = (string)datos.Lector["Marca"];
+                    aux.Categoria = new Categoria();
+                    aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+                    aux.CostoUnidad = (float)Convert.ToDecimal(datos.Lector["CostoUnidad"]);
                     aux.StockActual = (int)datos.Lector["StockActual"];
                     aux.StockMinimo = (int)datos.Lector["StockMinimo"];
                     aux.PorcentajeGanancia = (float)Convert.ToDecimal(datos.Lector["PorcentajeGanancia"]);
                     aux.UrlImagen = (string)datos.Lector["UrlImagen"];
-                    
+
                     if (datos.Lector["UrlImagen"] == DBNull.Value) { aux.UrlImagen = "."; }
 
                     lista.Add(aux);
@@ -55,6 +59,64 @@ namespace Negocio
 
 
 
+        }
+        public void agregar(Producto producto, int cantidadIngreso)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            //usar los decimales con PUNTO
+            //al usar COMA se pincha
+
+            producto.StockActual = cantidadIngreso;
+            try
+            {
+                //datos.setearConsulta("insert into Productos (Codigo, IdProveedor, Descripcion, IdMarca, IdCategoria, CostoUnidad, StockActual, StockMinimo, PorcentajeGanancia, UrlImagen, Estado) VALUES ("+producto.Codigo+", "+producto.Proveedor.Id+", '"+producto.Descripcion+"', "+producto.Marca.Id+", "+producto.Categoria.Id+", "+producto.CostoUnidad+", "+producto.StockActual+", "+producto.StockMinimo+", 0.25, 'ash.jpg', 1)");
+                datos.setearConsulta("insert into Productos (Codigo, IdProveedor, Descripcion, IdMarca, IdCategoria, CostoUnidad, StockActual, StockMinimo, PorcentajeGanancia, UrlImagen, Estado) VALUES (" + producto.Codigo + ", " + producto.Proveedor.Id + ", '" + producto.Descripcion + "', " + producto.Marca.Id + ", " + producto.Categoria.Id + ", " + producto.CostoUnidad + ", " + producto.StockActual + ", " + producto.StockMinimo + ", " + producto.PorcentajeGanancia + ", '" + producto.UrlImagen + "', 1)");
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+        public void eliminar(int id)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearConsulta("delete from Productos where id = @id");
+                datos.setearParametro("@id", id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public void modificar(Producto producto)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("update Productos set Codigo = " + producto.Codigo + ", IdProveedor = " + producto.Proveedor.Id + ", Descripcion = '" + producto.Descripcion + "', IdMarca = " + producto.Marca.Id + ", IdCategoria = " + producto.Categoria.Id + ", CostoUnidad = " + producto.CostoUnidad + ", StockActual = " + producto.StockActual + ", StockMinimo = " + producto.StockMinimo + ", PorcentajeGanancia = " + producto.PorcentajeGanancia + ", UrlImagen = '" + producto.UrlImagen + "' where Id = " + producto.Id + "");
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
         }
     }
 }

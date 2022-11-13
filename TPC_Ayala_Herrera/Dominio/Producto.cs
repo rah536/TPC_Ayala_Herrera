@@ -10,15 +10,11 @@ namespace Dominio
     {
         public int Id { get; set; }
         public int Codigo { get; set; }
-        public int IdProveedor { get; set; }
+        public Proveedor Proveedor { get; set; }
         public string Descripcion { get; set; }
-        public string Marca { get; set; }
-        //public Marca Marca { get; set; }
-
-        public string Categoria { get; set; }
-        //public Categoria Categoria { get; set; }
-
-        public float Costo { get; set; }
+        public Marca Marca { get; set; }
+        public Categoria Categoria { get; set; }
+        public float CostoUnidad { get; set; }
         public int StockActual { get; set; }
         public int StockMinimo { get; set; }
         public float PorcentajeGanancia { get; set; }
