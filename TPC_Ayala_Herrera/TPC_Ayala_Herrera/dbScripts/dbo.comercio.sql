@@ -129,6 +129,7 @@ create table Categoria(
 	Descripcion varchar(50) not null,
 	Estado bit
 )
+insert into Categoria values('sabath')
 --
 Create Table Merchandising (
     IdCategoria int Foreign Key References Categoria(Id),
@@ -171,6 +172,21 @@ Create Table Rol(
 );
 
 insert into Rol (Descripcion, Estado) VALUES ('Empleado', 1), ('Cliente', 1),('Proveedor', 1),('Administrador', 1)
-
+--drop table productos
 --
+Create Table Productos(
+	Id int primary key identity(1,1),
+	Codigo int not null,
+	IdProveedor int foreign key references Proveedor(IdProveedor),
+	Descripcion varchar(50) not null,
+	IdMarca int foreign key references Marca(Id),
+	IdCategoria int foreign key references Categoria(Id),
+	CostoUnidad money not null,
+	StockActual int not null,
+	StockMinimo int not null,
+	PorcentajeGanancia float not null,
+	UrlImagen varchar(200),
+	Estado bit
+)
+
 
