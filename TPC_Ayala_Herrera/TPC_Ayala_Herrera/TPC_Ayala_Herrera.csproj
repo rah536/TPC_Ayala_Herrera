@@ -75,6 +75,7 @@
     <Content Include="MarcasAlta.aspx" />
     <Content Include="Productos.aspx" />
     <Content Include="ProductosAlta.aspx" />
+    <Content Include="ProductosDetalle.aspx" />
     <Content Include="Proveedores.aspx" />
     <Content Include="Ventas.aspx" />
     <Content Include="Web.config" />
@@ -153,6 +154,13 @@
     </Compile>
     <Compile Include="ProductosAlta.aspx.designer.cs">
       <DependentUpon>ProductosAlta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductosDetalle.aspx.cs">
+      <DependentUpon>ProductosDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductosDetalle.aspx.designer.cs">
+      <DependentUpon>ProductosDetalle.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proveedores.aspx.cs">

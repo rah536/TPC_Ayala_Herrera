@@ -23,10 +23,6 @@ namespace TPC_Ayala_Herrera
         protected void gvProductos_SelectedIndexChanged(object sender, EventArgs e)
         {
             var id = gvProductos.SelectedRow.Cells[0].Text;
-            //Redirigir a pagina para ver detalle
-            //Response.Redirect("ProductosDetalle.aspx?id=" + id, false);
-
-            //Hasta desarrollar el VER DETALLE, usamos este evento para modificar
             Response.Redirect("ProductosAlta.aspx?id=" + id, false);
         }
 
@@ -65,6 +61,13 @@ namespace TPC_Ayala_Herrera
         protected void btnAltaProducto_Click(object sender, EventArgs e)
         {
             Response.Redirect("ProductosAlta.aspx", false);
+        }
+
+        protected void gvProductos_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            //Redirigir a pagina para ver detalle
+            var id = gvProductos.Rows[e.NewEditIndex].Cells[0].Text;
+            Response.Redirect("ProductosDetalle.aspx?id=" + id, false);
         }
     }
 }

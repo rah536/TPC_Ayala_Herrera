@@ -17,32 +17,36 @@ namespace TPC_Ayala_Herrera
             MarcaNegocio marcaNegocio = new MarcaNegocio();
             CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
 
-            try
+            if(!IsPostBack)
             {
-                //cargo los ddl siempre (si agrego o modifico producto)
-                ddlProveedor.DataSource = proveedorNegocio.listar();
-                ddlProveedor.DataTextField = "RazonSocial";
-                ddlProveedor.DataValueField = "IdProveedor";
-                ddlProveedor.DataBind();
+                try
+                {
+                    //cargo los ddl siempre (si agrego o modifico producto)
+                    ddlProveedor.DataSource = proveedorNegocio.listar();
+                    ddlProveedor.DataTextField = "RazonSocial";
+                    ddlProveedor.DataValueField = "IdProveedor";
+                    ddlProveedor.DataBind();
 
-                ddlMarca.DataSource = marcaNegocio.listar();
-                ddlMarca.DataTextField = "Descripcion";
-                ddlMarca.DataValueField = "Id";
-                ddlMarca.DataBind();
+                    ddlMarca.DataSource = marcaNegocio.listar();
+                    ddlMarca.DataTextField = "Descripcion";
+                    ddlMarca.DataValueField = "Id";
+                    ddlMarca.DataBind();
 
-                ddlCategoria.DataSource = categoriaNegocio.listar();
-                ddlCategoria.DataTextField = "Descripcion";
-                ddlCategoria.DataValueField = "Id";
-                ddlCategoria.DataBind();
+                    ddlCategoria.DataSource = categoriaNegocio.listar();
+                    ddlCategoria.DataTextField = "Descripcion";
+                    ddlCategoria.DataValueField = "Id";
+                    ddlCategoria.DataBind();
+                }
+                catch (Exception ex)
+                {
+                    //mensaje de error
+                    throw ex;
+                }
             }
-            catch (Exception ex)
-            {
-                //mensaje de error
-                throw ex;
-            }
+            
 
 
-            //cargo los textbox y selecciono opcion del ddl porque quiero MODIFICAR PRODUCTO
+            //precargo los textbox y precargo ddl porque quiero MODIFICAR PRODUCTO
             if (Request.QueryString["id"] != null && !IsPostBack) //Si el link viene con un id, cargo los datos en los textbox
             {
 
@@ -63,7 +67,7 @@ namespace TPC_Ayala_Herrera
                         txtUrlImagen.Text = item.UrlImagen;
 
                         //falta precargar los ddl
-                        ddlProveedor.SelectedValue = item.Proveedor.IdProveedor.ToString();
+                        //ddlProveedor.SelectedValue = item.Proveedor.IdProveedor.ToString();
 
                     }
                 }

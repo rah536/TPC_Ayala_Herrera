@@ -13,7 +13,7 @@
         </div>
           
         <div class="card-body col-6 m-auto">
-            <asp:GridView ID="gvProductos" OnSelectedIndexChanged="gvProductos_SelectedIndexChanged" OnRowDeleting="gvProductos_RowDeleting"  AutoGenerateColumns="false" CssClass="table table-striped" runat="server">
+            <asp:GridView ID="gvProductos" OnRowEditing="gvProductos_RowEditing" OnSelectedIndexChanged="gvProductos_SelectedIndexChanged" OnRowDeleting="gvProductos_RowDeleting"  AutoGenerateColumns="false" CssClass="table table-striped" runat="server">
                 <Columns>
                     <asp:BoundField HeaderText="Id Producto" DataField="Id"/>
                     <asp:BoundField HeaderText="Código" DataField="Codigo" />
@@ -23,6 +23,7 @@
                     <asp:BoundField HeaderText="Categoría" DataField="Categoria.Descripcion" />
                     <asp:BoundField HeaderText="Stock" DataField="StockActual" />
                     <asp:BoundField HeaderText="Stock mínimo" DataField="StockMinimo" />
+                    <asp:CommandField ShowEditButton="true" EditText="Detalle" ControlStyle-CssClass="btn btn-link" HeaderText="Detalle" />
                     <asp:CommandField ShowSelectButton="true" SelectText="Modificar" ControlStyle-CssClass="btn btn-info" HeaderText="Modificar" />
                     <asp:CommandField ShowDeleteButton="true" ButtonType="Button" ControlStyle-CssClass="btn btn-danger" HeaderText="Eliminar" />
                 </Columns>
