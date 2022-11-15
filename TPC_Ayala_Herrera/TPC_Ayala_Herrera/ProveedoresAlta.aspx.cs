@@ -27,7 +27,7 @@ namespace TPC_Ayala_Herrera
                     {
                         tbRazonSocial.Text = item.RazonSocial;
 
-                        tbNombre.Text = item.RazonSocial;
+                        tbNombre.Text = item.Nombre;
                         tbApellido.Text = item.Apellido;
                         tbDni.Text = item.Dni.ToString();
                         tbCuit.Text = item.Cuit.ToString();

@@ -65,7 +65,7 @@
 
 
 
-                <asp:Button ID="btnAgregar" runat="server" Text="Agregar" OnClick="btnAgregar_Click" CssClass="btn btn-success btn-lg" />
+                <asp:Button ID="btnAgregar" runat="server" Text="Aceptar" OnClick="btnAgregar_Click" CssClass="btn btn-success btn-lg" />
 
 
 
