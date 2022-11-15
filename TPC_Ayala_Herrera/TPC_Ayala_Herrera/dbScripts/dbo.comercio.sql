@@ -5,10 +5,21 @@ go
 use Comercio
 go
 
+--drop table Marca
 --drop table productos
---drop table marca
 --drop table proveedor
---
+--drop table persona
+--drop table cliente
+--drop table empleado
+--	
+--drop table categoria
+--drop table merchandising
+--drop table indumentaria
+--drop table rol
+--drop table biblioteca
+
+
+
 create table Productos(
 Id INT not null PRIMARY KEY IDENTITY(1,1),
 Codigo int not null,
@@ -68,7 +79,6 @@ insert into proveedor(razonSocial,Nombre,Apellido, dni, cuit, domicilio, mail, t
 ('Fiado para todos', 'Cristiana', 'Ronalda', 31650942, 2731650942, 'Inyusticia 333','bebetoromario@siuuuu.com', '99991010',1,3)
  
 --
-
 create table persona(
 	id int not null primary key identity (1,1),
 	Nombre varchar (50),
@@ -120,7 +130,6 @@ create table empleado(
 
 
 			 
-	
 
 
 --________________________________
@@ -129,7 +138,7 @@ create table Categoria(
 	Descripcion varchar(50) not null,
 	Estado bit
 )
-insert into Categoria values('sabath')
+insert into Categoria (descripcion) values ('sabath')
 --
 Create Table Merchandising (
     IdCategoria int Foreign Key References Categoria(Id),
@@ -152,7 +161,6 @@ Create Table Indumentaria(
 Insert into Indumentaria Values (1, 'Femenino', 'Blanco', 'XL')
 
 --
-
 Create Table Biblioteca(
 	IdCategoria int Foreign Key References Categoria(Id),
 	Autor varchar(100),
@@ -172,8 +180,6 @@ Create Table Rol(
 );
 
 insert into Rol (Descripcion, Estado) VALUES ('Empleado', 1), ('Cliente', 1),('Proveedor', 1),('Administrador', 1)
---drop table productos
---
 Create Table Productos(
 	Id int primary key identity(1,1),
 	Codigo int not null,
@@ -190,3 +196,8 @@ Create Table Productos(
 )
 
 
+
+
+
+
+Select Prod.Id, Prod.Codigo, prov.razonSocial as razonSocial, Prod.Descripcion, Mar.Descripcion as Marca, Cat.Descripcion as Categoria, Prod.CostoUnidad, Prod.StockActual, Prod.StockMinimo, Prod.PorcentajeGanancia, Prod.UrlImagen from Productos Prod Inner Join proveedor prov On Prod.IdProveedor = prov.idProveedor Inner Join Marca Mar On Mar.Id = Prod.IdMarca Inner Join Categoria Cat On Cat.Id = Prod.IdCategoria
