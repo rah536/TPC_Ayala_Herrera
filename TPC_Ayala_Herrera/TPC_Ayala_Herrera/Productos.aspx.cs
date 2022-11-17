@@ -69,5 +69,16 @@ namespace TPC_Ayala_Herrera
             var id = gvProductos.Rows[e.NewEditIndex].Cells[0].Text;
             Response.Redirect("ProductosDetalle.aspx?id=" + id, false);
         }
+
+        protected void gvProductos_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        {
+
+
+
+        }
     }
+
+
+
+
 }

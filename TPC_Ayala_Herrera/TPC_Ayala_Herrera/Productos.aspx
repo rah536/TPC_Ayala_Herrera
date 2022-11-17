@@ -13,7 +13,7 @@
         </div>
           
         <div class="card-body col-6 m-auto">
-            <asp:GridView ID="gvProductos" OnRowEditing="gvProductos_RowEditing" OnSelectedIndexChanged="gvProductos_SelectedIndexChanged" OnRowDeleting="gvProductos_RowDeleting"  AutoGenerateColumns="false" CssClass="table table-striped" runat="server">
+            <asp:GridView ID="gvProductos" OnRowEditing="gvProductos_RowEditing"  OnSelectedIndexChanged="gvProductos_SelectedIndexChanged" OnRowDeleting="gvProductos_RowDeleting"  AutoGenerateColumns="false" CssClass="table table-striped" runat="server">
                 <Columns>
                     <asp:BoundField HeaderText="Id Producto" DataField="Id"/>
                     <asp:BoundField HeaderText="Código" DataField="Codigo" />
@@ -23,15 +23,21 @@
                     <asp:BoundField HeaderText="Categoría" DataField="Categoria.Descripcion" />
                     <asp:BoundField HeaderText="Stock" DataField="StockActual" />
                     <asp:BoundField HeaderText="Stock mínimo" DataField="StockMinimo" />
-                    <asp:CommandField ShowEditButton="true" EditText="Detalle" ControlStyle-CssClass="btn btn-link" HeaderText="Detalle" />
+                    <asp:CommandField ShowEditButton="true" EditText="Detalle" ControlStyle-CssClass="btn btn-warning" HeaderText="Detalle" />
+                    
+
                     <asp:CommandField ShowSelectButton="true" SelectText="Modificar" ControlStyle-CssClass="btn btn-info" HeaderText="Modificar" />
                     <asp:CommandField ShowDeleteButton="true" ButtonType="Button" ControlStyle-CssClass="btn btn-danger" HeaderText="Eliminar" />
                 </Columns>
             </asp:GridView>
         </div>
         <asp:Panel ID="Panel1" visible="false" BackColor="lightgray" cssclass="modal modal-content m-auto p-3 text-center fixed-bottom position-absolute border-5 border-dark" Height="220px" Width="350px" runat="server">
-                    <h5><asp:Label ID="lblPanel"  runat="server" Text="Desea Eliminar El Registro?"></asp:Label></h5>
-                    <asp:Button ID="btnPanelAceptar" CssClass="mt-5 mb-3 btn btn-success" runat="server" Text="Aceptar" OnClick="btnPanelAceptar_Click"  />
+                   
+            
+            <h5><asp:Label ID="lblPanel"  runat="server" Text="Desea Eliminar El Registro?"></asp:Label></h5>
+        
+            
+            <asp:Button ID="btnPanelAceptar" CssClass="mt-5 mb-3 btn btn-success" runat="server" Text="Aceptar" OnClick="btnPanelAceptar_Click"  />
                     <asp:Button ID="btnPanelCancelar" CssClass="btn btn-danger" runat="server" Text="Cancelar" OnClick="btnPanelCancelar_Click"   />
         </asp:Panel>
 
