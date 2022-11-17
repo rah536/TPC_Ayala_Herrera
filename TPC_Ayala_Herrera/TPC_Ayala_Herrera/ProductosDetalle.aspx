@@ -19,29 +19,50 @@
                 { %>
 
 
-            <div class="card-deck">
 
-                <div class="card"> 
+
+            <div class="card-group">
                     <% if (prod.Id == idProd)
                         { %>
-                    <img src="<%:prod.UrlImagen %>" " class="card-img-top" alt="ImgArt" width="200" height="250">
-                    <div class="card-body">
-                        <h5 class="card-title"><%: prod.Descripcion %></h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-                    <%
+  <div class="card mb-3" style="max-width: 320px; margin:0px auto;"  >
+    <img class="card-img-top" src="<%:prod.UrlImagen %>" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><%: prod.Descripcion %></h5>
+      <p class="card-text"> <%: prod.Categoria.Descripcion %></p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">$  <%: prod.CostoUnidad %></small>
+    </div>
+  </div>
+
+
+
+                       <%
                         }
 
                             %>
            
-               <% }
+
+</div>
+
+
+
+                <% }
                 %>
-              
-            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
 
 
 
