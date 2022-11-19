@@ -46,7 +46,7 @@ namespace TPC_Ayala_Herrera
                 try
                 {
                     marcaNegocio.modificar(marca);
-                    //Añadir cartel aclarando si se pudo o no modificar registro
+                    PanelModificadoOk.Visible = true;
                 }
                 catch (Exception ex)
                 {
@@ -60,7 +60,7 @@ namespace TPC_Ayala_Herrera
                 try
                 {
                     marcaNegocio.agregar(marca.Descripcion);
-                    //Añadir cartel aclarando si se pudo o no agregar registro
+                    PanelAgregadoOk.Visible = true;
                 }
                 catch (Exception ex)
                 {
@@ -72,6 +72,18 @@ namespace TPC_Ayala_Herrera
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
+            Response.Redirect("Marcas.aspx", false);
+        }
+
+        protected void btnCerrarPanelModificadoOk_Click(object sender, EventArgs e)
+        {
+            PanelModificadoOk.Visible = false;
+            Response.Redirect("Marcas.aspx", false);
+        }
+
+        protected void btnCerrarPanelAgregadoOk_Click(object sender, EventArgs e)
+        {
+            PanelAgregadoOk.Visible = false;
             Response.Redirect("Marcas.aspx", false);
         }
     }

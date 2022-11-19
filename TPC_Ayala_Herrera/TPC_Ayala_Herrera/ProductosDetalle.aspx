@@ -14,6 +14,7 @@
         <div class="card-body">
             
             <% 
+                //agregar if para cuando el id venga vacio
                 int idProd = int.Parse( Request.QueryString["id"].ToString());
                 foreach (Dominio.Producto prod in Listaproducto)
                 { %>
@@ -52,27 +53,11 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-     
-
-
-
-
-
-
-
         </div>
 
-        <div class="card-footer">
+        <div class="card-footer mt-5">
+            <asp:Button ID="btnRegresar" runat="server" Text="Regresar a Listado" CssClass="btn btn-primary btn-lg" OnClick="btnRegresar_Click"  />
+        
         </div>
     </div>
 

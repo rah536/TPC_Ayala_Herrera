@@ -43,6 +43,8 @@ namespace TPC_Ayala_Herrera
                 Panel1.Visible = false;
                 gvProveedor.DataSource = proveedorNegocio.listar();
                 gvProveedor.DataBind();
+                //mensaje borrado con exito
+                PanelEliminadoOk.Visible = true;
             }
             catch (Exception ex)
             {
@@ -57,27 +59,17 @@ namespace TPC_Ayala_Herrera
         protected void btnAltaProveedor_Click(object sender, EventArgs e)
         {
             Response.Redirect("ProveedoresAlta.aspx", false);
-
-
         }
 
 
         public void btnPanelCancelarProveedor_Click(object sender, EventArgs e)
         {
-
-
             Panel1.Visible = false;
-
-
-
         }
 
-
-
-
-
-
-
-
+        protected void btnCerrarPanelEliminadoOk_Click(object sender, EventArgs e)
+        {
+            PanelEliminadoOk.Visible = false;
+        }
     }
 }

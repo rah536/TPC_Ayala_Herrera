@@ -43,6 +43,8 @@ namespace TPC_Ayala_Herrera
                 Panel1.Visible = false;
                 gvClientes.DataSource = clienteNegocio.listar();
                 gvClientes.DataBind();
+                //mensaje de eliminado con exito
+                PanelEliminadoOk.Visible = true;
             }
             catch (Exception ex)
             {
@@ -60,6 +62,11 @@ namespace TPC_Ayala_Herrera
         protected void btnAltaCliente_Click(object sender, EventArgs e)
         {
             Response.Redirect("ClientesAlta.aspx", false);
+        }
+
+        protected void btnCerrarPanelEliminadoOk_Click(object sender, EventArgs e)
+        {
+            PanelEliminadoOk.Visible = false;
         }
     }
 }

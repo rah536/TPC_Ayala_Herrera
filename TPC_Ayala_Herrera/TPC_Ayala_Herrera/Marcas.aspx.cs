@@ -42,6 +42,8 @@ namespace TPC_Ayala_Herrera
                 Panel1.Visible = false;
                 gvMarcas.DataSource = marcaNegocio.listar();
                 gvMarcas.DataBind();
+                //mensaje borrado ok
+                PanelEliminadoOk.Visible = true;
             }
             catch (Exception ex)
             {
@@ -59,6 +61,11 @@ namespace TPC_Ayala_Herrera
         protected void btnAltaMarca_Click(object sender, EventArgs e)
         {
             Response.Redirect("MarcasAlta.aspx", false);
+        }
+
+        protected void btnCerrarPanelEliminadoOk_Click(object sender, EventArgs e)
+        {
+            PanelEliminadoOk.Visible = false;
         }
     }
 }

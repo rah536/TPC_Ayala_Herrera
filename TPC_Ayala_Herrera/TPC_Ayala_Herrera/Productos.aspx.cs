@@ -40,10 +40,11 @@ namespace TPC_Ayala_Herrera
                 ProductoNegocio productoNegocio = new ProductoNegocio();
                 productoNegocio.eliminar(int.Parse(id2));
                 Panel1.Visible = false;
-
                 //Actualiza la grilla al eliminar
                 gvProductos.DataSource = productoNegocio.listar();
                 gvProductos.DataBind();
+                //mensaje borrado ok
+                PanelEliminadoOk.Visible = true;
             }
             catch (Exception ex)
             {
@@ -70,11 +71,9 @@ namespace TPC_Ayala_Herrera
             Response.Redirect("ProductosDetalle.aspx?id=" + id, false);
         }
 
-        protected void gvProductos_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        protected void btnCerrarPanelEliminadoOk_Click(object sender, EventArgs e)
         {
-
-
-
+            PanelEliminadoOk.Visible = false;
         }
     }
 

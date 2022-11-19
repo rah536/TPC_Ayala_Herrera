@@ -43,6 +43,7 @@ namespace TPC_Ayala_Herrera
                 gvCategorias.DataSource = categoriaNegocio.listar();
                 gvCategorias.DataBind();
                 //mensaje de borrado con exito
+                PanelEliminadoOk.Visible = true;
             }
             catch (Exception ex)
             {
@@ -60,6 +61,11 @@ namespace TPC_Ayala_Herrera
         protected void btnAltaCategoria_Click(object sender, EventArgs e)
         {
             Response.Redirect("CategoriasAlta.aspx", false);
+        }
+
+        protected void btnCerrarPanelEliminadoOk_Click(object sender, EventArgs e)
+        {
+            PanelEliminadoOk.Visible = false;
         }
     }
 }

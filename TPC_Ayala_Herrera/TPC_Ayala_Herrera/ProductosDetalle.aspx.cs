@@ -21,12 +21,14 @@ namespace TPC_Ayala_Herrera
 
             ProductoNegocio negocio = new ProductoNegocio();
 
-           
             Listaproducto = negocio.listar();
 
 
+        }
 
-
+        protected void btnRegresar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Productos.aspx", false);
         }
     }
 }

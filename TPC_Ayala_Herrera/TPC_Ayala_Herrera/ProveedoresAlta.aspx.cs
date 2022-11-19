@@ -21,7 +21,7 @@ namespace TPC_Ayala_Herrera
                 ProveedorNegocio proveedorNegocio = new ProveedorNegocio();
                 List<Proveedor> proveedor = proveedorNegocio.listar();
 
-                foreach (Proveedor item in proveedor) //recorro la lista de marcas para encontrar la marca con el id que viene en el link
+                foreach (Proveedor item in proveedor) //recorro la lista de proveedores para encontrar el proveedor con el id que viene en el link
                 {
                     if (item.IdProveedor.ToString() == Request.QueryString["id"].ToString())
                     {
@@ -39,15 +39,6 @@ namespace TPC_Ayala_Herrera
                     }
                 }
             }
-
-
-
-
-
-
-
-
-
 
         }
 
@@ -68,41 +59,42 @@ namespace TPC_Ayala_Herrera
             aux.Estado = Convert.ToBoolean(Convert.ToInt16(1));
             aux.IdRol = Convert.ToInt16(3);
 
-
-
-
-
-
             ProveedorNegocio proveedorNegocio = new ProveedorNegocio();
 
-            if (Request.QueryString["id"] != null)
+            if (Request.QueryString["id"] != null) // modificar
             {
-           
-                
-              aux.IdProveedor = int.Parse(Request.QueryString["id"]);
-                
-                proveedorNegocio.modificar(aux);
-                
-                
-                    
-                
+                try
+                {
+                    aux.IdProveedor = int.Parse(Request.QueryString["id"]);
+                    proveedorNegocio.modificar(aux);
+                    PanelModificadoOk.Visible = true;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                    //Agregar cartel de error
+                }
             }
-            else
+            else // Agregar
             {
-            proveedorNegocio.agregar(aux);
+                try
+                {
+                    proveedorNegocio.agregar(aux);
+                    PanelAgregadoOk.Visible = true;
+                }
+                catch (Exception ex)
+                {
 
+                    throw ex;
+                }
             }
-
-
-
-
 
 
         }
 
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
-            ProveedorNegocio proveedorNegocio = new ProveedorNegocio();
+            /*ProveedorNegocio proveedorNegocio = new ProveedorNegocio();
             Proveedor proveedor = new Proveedor();
             if (Request.QueryString["id"] != null)
             {
@@ -140,14 +132,24 @@ namespace TPC_Ayala_Herrera
                     throw ex;
                     //Agregar cartel de error
                 }
-            }
+            }*/
         }
 
-        protected void btnCancelar_Click(object sender, EventArgs e)
+        protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Proveedor.aspx", false);
+            Response.Redirect("Proveedores.aspx", false);
         }
 
+        protected void btnCerrarPanelModificadoOk_Click(object sender, EventArgs e)
+        {
+            PanelModificadoOk.Visible = false;
+            Response.Redirect("Proveedores.aspx", false);
+        }
 
+        protected void btnCerrarPanelAgregadoOk_Click(object sender, EventArgs e)
+        {
+            PanelAgregadoOk.Visible = false;
+            Response.Redirect("Proveedores.aspx", false);
+        }
     }
 }
