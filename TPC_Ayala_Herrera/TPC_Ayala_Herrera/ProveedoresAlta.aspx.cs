@@ -54,7 +54,7 @@ namespace TPC_Ayala_Herrera
             aux.Cuit = Convert.ToInt64(tbCuit.Text);
             aux.Domicilio = tbDomicilio.Text;
             aux.Mail = tbMail.Text;
-            
+            aux.FechaAlta = DateTime.Now;
             aux.Telefono = tbTelefono.Text;
             aux.Estado = Convert.ToBoolean(Convert.ToInt16(1));
             aux.IdRol = Convert.ToInt16(3);

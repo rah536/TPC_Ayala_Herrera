@@ -25,7 +25,7 @@
                     <asp:BoundField HeaderText="Mail" DataField="mail" />
                     <asp:BoundField HeaderText="Telefono" DataField="telefono" />
                     <asp:BoundField HeaderText="Rol" DataField="idRol" />
-                    <asp:BoundField HeaderText="Fecha Alta" DataField="fechaAlta" />
+                    <asp:BoundField HeaderText="Fecha Alta" DataField="fechaAlta" DataFormatString="{0:dd/MM/yyyy}"/>
                     <asp:CommandField ShowSelectButton="true" SelectText="Seleccionar" ControlStyle-CssClass="btn btn-info" HeaderText="Modificar" />
                     <asp:CommandField ShowDeleteButton="true" ButtonType="Button" ControlStyle-CssClass="btn btn-danger" HeaderText="Eliminar" />
                 </Columns>

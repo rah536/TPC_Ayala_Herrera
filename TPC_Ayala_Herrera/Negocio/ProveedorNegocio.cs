@@ -1,10 +1,12 @@
 ﻿using Dominio;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+
 
 namespace Negocio
 {
@@ -17,7 +19,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("select idproveedor, razonSocial,Nombre,Apellido, dni, cuit, domicilio, mail, telefono,estado,idRol from proveedor");
+                datos.setearConsulta("select idproveedor, razonSocial,Nombre,Apellido, dni, cuit, domicilio, mail, telefono,estado,idRol, fechaAlta from proveedor");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -35,7 +37,9 @@ namespace Negocio
                     aux.Telefono = (string)datos.Lector["telefono"];
                     aux.Estado = (bool)datos.Lector["estado"];
                     aux.IdRol = (int)datos.Lector["idRol"];
-
+                    var x = datos.Lector["fechaAlta"];
+                   
+                    aux.FechaAlta =(DateTime)x;
 
                     aux.IdProducto = 0;
 
@@ -127,7 +131,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("insert into Proveedor (razonSocial,Nombre,Apellido, dni, cuit, domicilio, mail, telefono,estado,idRol) VALUES ('" + proveedor.RazonSocial + "','" + proveedor.Nombre + "','" + proveedor.Apellido + "','" + proveedor.Dni + "','" + proveedor.Cuit + "','" + proveedor.Domicilio + "','" + proveedor.Mail + "','" + proveedor.Telefono + "','" + proveedor.Estado + "','" + proveedor.IdRol + "')");
+                datos.setearConsulta("insert into Proveedor (razonSocial,Nombre,Apellido, dni, cuit, domicilio, mail, telefono,estado,idRol, fechaAlta) VALUES ('" + proveedor.RazonSocial + "','" + proveedor.Nombre + "','" + proveedor.Apellido + "','" + proveedor.Dni + "','" + proveedor.Cuit + "','" + proveedor.Domicilio + "','" + proveedor.Mail + "','" + proveedor.Telefono + "','" + proveedor.Estado + "','" + proveedor.IdRol + "','" + proveedor.FechaAlta + "')");
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
