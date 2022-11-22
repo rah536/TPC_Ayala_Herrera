@@ -26,13 +26,18 @@
                     <% if (prod.Id == idProd)
                         { %>
   <div class="card mb-3" style="max-width: 320px; margin:0px auto;"  >
+
     <img class="card-img-top" src="<%:prod.UrlImagen %>" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title"><%: prod.Descripcion %></h5>
+ 
       <p class="card-text"> <%: prod.Categoria.Descripcion %></p>
     </div>
     <div class="card-footer">
-      <small class="text-muted">$  <%: prod.CostoUnidad %></small>
+      <% string costo = prod.CostoUnidad.ToString("C",System.Globalization.CultureInfo.CreateSpecificCulture("es-AR"));   
+          %> 
+       
+      <small class="text-muted"  > <h1> <%: costo %>  </h1></small>
     </div>
   </div>
 
