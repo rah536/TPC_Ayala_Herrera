@@ -131,7 +131,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("insert into Proveedor (razonSocial,Nombre,Apellido, dni, cuit, domicilio, mail, telefono,estado,idRol, fechaAlta) VALUES ('" + proveedor.RazonSocial + "','" + proveedor.Nombre + "','" + proveedor.Apellido + "','" + proveedor.Dni + "','" + proveedor.Cuit + "','" + proveedor.Domicilio + "','" + proveedor.Mail + "','" + proveedor.Telefono + "','" + proveedor.Estado + "','" + proveedor.IdRol + "','" + proveedor.FechaAlta + "')");
+                datos.setearConsulta("SET DATEFORMAT dmy insert into Proveedor (razonSocial,Nombre,Apellido, dni, cuit, domicilio, mail, telefono,estado,idRol, fechaAlta) VALUES ('" + proveedor.RazonSocial + "','" + proveedor.Nombre + "','" + proveedor.Apellido + "','" + proveedor.Dni + "','" + proveedor.Cuit + "','" + proveedor.Domicilio + "','" + proveedor.Mail + "','" + proveedor.Telefono + "','" + proveedor.Estado + "','" + proveedor.IdRol + "','" + proveedor.FechaAlta + "')");
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
