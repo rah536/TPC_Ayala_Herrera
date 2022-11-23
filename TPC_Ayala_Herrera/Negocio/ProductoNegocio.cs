@@ -18,7 +18,7 @@ namespace Negocio
             try
             {
                 //datos.setearConsulta("Select Id, Codigo, IdProveedor, Descripcion, Marca, Categoria, Costo, StockActual, StockMinimo, PorcentajeGanancia, UrlImagen from Productos");
-                datos.setearConsulta("Select Prod.Id, Prod.Codigo, prov.razonSocial as razonSocial, Prod.Descripcion, Mar.Descripcion as Marca, Cat.Descripcion as Categoria, Prod.CostoUnidad, Prod.StockActual, Prod.StockMinimo, Prod.PorcentajeGanancia, Prod.UrlImagen from Productos Prod Inner Join proveedor prov On Prod.IdProveedor = prov.idProveedor Inner Join Marca Mar On Mar.Id = Prod.IdMarca Inner Join Categoria Cat On Cat.Id = Prod.IdCategoria");
+                datos.setearConsulta("Select Prod.Id, Prod.Codigo, prov.IdProveedor as IdProveedor, prov.razonSocial as razonSocial, Prod.Descripcion, Mar.Descripcion as Marca, Cat.Descripcion as Categoria, Prod.CostoUnidad, Prod.StockActual, Prod.StockMinimo, Prod.PorcentajeGanancia, Prod.UrlImagen from Productos Prod Inner Join proveedor prov On Prod.IdProveedor = prov.idProveedor Inner Join Marca Mar On Mar.Id = Prod.IdMarca Inner Join Categoria Cat On Cat.Id = Prod.IdCategoria");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -27,13 +27,14 @@ namespace Negocio
                     aux.Id = (int)datos.Lector["Id"];
                     aux.Codigo = (int)datos.Lector["Codigo"];
                     aux.Proveedor = new Proveedor();
+                    aux.Proveedor.Id = (int)datos.Lector["IdProveedor"];
                     aux.Proveedor.RazonSocial = (string)datos.Lector["razonSocial"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
                     aux.Marca = new Marca();
                     aux.Marca.Descripcion = (string)datos.Lector["Marca"];
                     aux.Categoria = new Categoria();
                     aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
-                    aux.CostoUnidad = (float)Convert.ToDecimal(datos.Lector["CostoUnidad"]);
+                    //aux.CostoUnidad = (float)Convert.ToDecimal(datos.Lector["CostoUnidad"]);
                     aux.StockActual = (int)datos.Lector["StockActual"];
                     aux.StockMinimo = (int)datos.Lector["StockMinimo"];
                     aux.PorcentajeGanancia = (float)Convert.ToDecimal(datos.Lector["PorcentajeGanancia"]);

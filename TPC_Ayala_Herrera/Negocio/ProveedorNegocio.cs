@@ -39,7 +39,7 @@ namespace Negocio
                     aux.IdRol = (int)datos.Lector["idRol"];
                     var x = datos.Lector["fechaAlta"];
                    
-                    aux.FechaAlta =(DateTime)x;
+                    //aux.FechaAlta =(DateTime)x;
 
                     aux.IdProducto = 0;
 

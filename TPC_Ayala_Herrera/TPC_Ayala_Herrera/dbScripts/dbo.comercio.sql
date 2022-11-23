@@ -201,3 +201,15 @@ Create Table Productos(
 
 
 Select Prod.Id, Prod.Codigo, prov.razonSocial as razonSocial, Prod.Descripcion, Mar.Descripcion as Marca, Cat.Descripcion as Categoria, Prod.CostoUnidad, Prod.StockActual, Prod.StockMinimo, Prod.PorcentajeGanancia, Prod.UrlImagen from Productos Prod Inner Join proveedor prov On Prod.IdProveedor = prov.idProveedor Inner Join Marca Mar On Mar.Id = Prod.IdMarca Inner Join Categoria Cat On Cat.Id = Prod.IdCategoria
+
+
+_________________________________________
+Create table CompraOperacion(
+	Id int not null primary key identity(1,1),
+	IdProveedor int foreign key references proveedor(idProveedor),
+	FechaCompra datetime,
+	--
+	IdProducto int foreign key references Productos(Id),
+	Cantidad int not null,
+	Total money
+);
