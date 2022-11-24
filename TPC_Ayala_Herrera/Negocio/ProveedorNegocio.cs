@@ -19,7 +19,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("select idproveedor, razonSocial,Nombre,Apellido, dni, cuit, domicilio, mail, telefono,estado,idRol, fechaAlta from proveedor");
+                datos.setearConsulta("select idproveedor, razonSocial,Nombre,Apellido, dni, cuit, domicilio, mail, telefono,estado,idRol, fechaAlta from proveedor where estado=1");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -38,8 +38,9 @@ namespace Negocio
                     aux.Estado = (bool)datos.Lector["estado"];
                     aux.IdRol = (int)datos.Lector["idRol"];
                     var x = datos.Lector["fechaAlta"];
-                   
-                    //aux.FechaAlta =(DateTime)x;
+
+
+                     aux.FechaAlta =(DateTime)x;
 
                     aux.IdProducto = 0;
 
@@ -76,7 +77,7 @@ namespace Negocio
             try
             {
                 AccesoDatos datos = new AccesoDatos();
-                datos.setearConsulta("delete from Proveedor where idProveedor = @idProveedor");
+                datos.setearConsulta("update Proveedor set estado = 0 where idProveedor = @idProveedor");
                 datos.setearParametro("@idProveedor", id);
                 datos.ejecutarAccion();
             }
@@ -131,7 +132,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("SET DATEFORMAT dmy insert into Proveedor (razonSocial,Nombre,Apellido, dni, cuit, domicilio, mail, telefono,estado,idRol, fechaAlta) VALUES ('" + proveedor.RazonSocial + "','" + proveedor.Nombre + "','" + proveedor.Apellido + "','" + proveedor.Dni + "','" + proveedor.Cuit + "','" + proveedor.Domicilio + "','" + proveedor.Mail + "','" + proveedor.Telefono + "','" + proveedor.Estado + "','" + proveedor.IdRol + "','" + proveedor.FechaAlta + "')");
+                datos.setearConsulta("insert into Proveedor (razonSocial,Nombre,Apellido, dni, cuit, domicilio, mail, telefono,estado,idRol, fechaAlta) VALUES ('" + proveedor.RazonSocial + "','" + proveedor.Nombre + "','" + proveedor.Apellido + "','" + proveedor.Dni + "','" + proveedor.Cuit + "','" + proveedor.Domicilio + "','" + proveedor.Mail + "','" + proveedor.Telefono + "','" + proveedor.Estado + "','" + proveedor.IdRol + "','" + proveedor.FechaAlta + "')");
                 datos.ejecutarAccion();
             }
             catch (Exception ex)

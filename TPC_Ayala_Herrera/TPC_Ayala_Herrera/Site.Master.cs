@@ -13,5 +13,24 @@ namespace TPC_Ayala_Herrera
         {
 
         }
+
+      
+
+        protected void btnIngresar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+            }
+            catch (Exception ex)
+            {
+
+
+                Session.Add("error", ex.ToString());
+            }
+            
+
+        }
     }
 }
