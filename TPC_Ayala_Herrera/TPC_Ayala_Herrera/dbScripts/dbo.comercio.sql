@@ -213,3 +213,25 @@ Create table CompraOperacion(
 	Cantidad int not null,
 	Total money
 );
+
+
+--drop table Usuarios
+
+Create table Usuarios (
+
+	Id  int  primary key identity,
+	Usuario varchar(50),
+	Pass varchar (50),
+	TipoUsuario int not null
+
+
+)
+select * from usuarios
+
+insert into Usuarios (Usuario, Pass, TipoUsuario) 
+values
+( 'administrador', 'administrador',1),
+( 'empleado', 'empleado',2)
+
+select id, usuario, pass, tipoUsuario from usuarios
+where usuario = @user and  pass = @pass
