@@ -119,5 +119,29 @@ namespace Negocio
                 datos.cerrarConexion();
             }
         }
+
+        public void actualizarStock(List<CompraOperacionDetalle> opDetalle)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            foreach (CompraOperacionDetalle item in opDetalle)
+            {
+                try
+                {
+                    datos.setearConsulta("Update Productos set CostoUnidad = " + item.Producto.CostoUnidad + ", StockActual = " + item.Producto.StockActual + ", StockMinimo = " + item.Producto.StockMinimo + ", PorcentajeGanancia = " + item.Producto.PorcentajeGanancia + " where Id = " + item.Producto.Id + "");
+                    datos.ejecutarAccion();
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+                finally
+                {
+                    datos.cerrarConexion();
+                }
+            }
+
+        }
     }
 }

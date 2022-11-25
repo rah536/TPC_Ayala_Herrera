@@ -87,6 +87,42 @@ namespace TPC_Ayala_Herrera
         protected global::System.Web.UI.WebControls.TextBox txtCantidadIngreso;
 
         /// <summary>
+        /// Control lblStockMinimo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblStockMinimo;
+
+        /// <summary>
+        /// Control txtStockMinimo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtStockMinimo;
+
+        /// <summary>
+        /// Control lblPorcentajeGanancia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPorcentajeGanancia;
+
+        /// <summary>
+        /// Control txtPorcentajeGanancia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPorcentajeGanancia;
+
+        /// <summary>
         /// Control btnAgregar.
         /// </summary>
         /// <remarks>
@@ -130,6 +166,33 @@ namespace TPC_Ayala_Herrera
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnVaciar;
+
+        /// <summary>
+        /// Control PanelAgregadoOk.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelAgregadoOk;
+
+        /// <summary>
+        /// Control lblPanelAgregadoOk.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPanelAgregadoOk;
+
+        /// <summary>
+        /// Control btnCerrarPanelAgregadoOk.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCerrarPanelAgregadoOk;
 
         /// <summary>
         /// Control btnAceptar.

@@ -17,11 +17,17 @@
                 </div>
 
                 <div class="border border-5 rounded-end alert">
-                    <asp:Label ID="lblCostoUnidad" runat="server" Text="Costo por unidad"></asp:Label> 
+                    <asp:Label ID="lblCostoUnidad" runat="server" Text="Ingrese el Costo por unidad"></asp:Label> 
                     <asp:TextBox ID="txtCostoUnidad" runat="server" CssClass="form-text"></asp:TextBox> <br />
                 
                     <asp:Label ID="lblCantidadIngreso" runat="server" Text="Cantidad de productos a ingresar"></asp:Label> 
                     <asp:TextBox ID="txtCantidadIngreso" runat="server" CssClass="form-text"></asp:TextBox> <br />
+                
+                    <asp:Label ID="lblStockMinimo" runat="server" Text="Ingrese el stock minimo de productos"></asp:Label> 
+                    <asp:TextBox ID="txtStockMinimo" runat="server" CssClass="form-text"></asp:TextBox> <br />
+                
+                    <asp:Label ID="lblPorcentajeGanancia" runat="server" Text="Ingrese el % de ganancia por unidad"></asp:Label> 
+                    <asp:TextBox ID="txtPorcentajeGanancia" runat="server" CssClass="form-text"></asp:TextBox> <br />
                 </div>
                 <asp:Button ID="btnAgregar" runat="server" Text="Agregar" CssClass="btn btn-dark btn-lg" OnClick="btnAgregar_Click"  /> <br />
             </div>
@@ -49,6 +55,13 @@
             </div>
 
         </div>
+
+        <asp:Panel ID="PanelAgregadoOk" visible="false" BackColor="lightgray" cssclass="modal modal-content m-auto p-3 text-center fixed-bottom position-absolute border-5 border-dark" Height="180px" Width="350px" runat="server">
+            <h5><asp:Label ID="lblPanelAgregadoOk" runat="server" Text="Compra efectuada con éxito"></asp:Label></h5>
+            <asp:Button ID="btnCerrarPanelAgregadoOk" CssClass="btn btn-primary mt-md-5" runat="server" Text="Cerrar" OnClick="btnCerrarPanelAgregadoOk_Click" />
+        </asp:Panel>
+
+
         <div class="card-footer mt-5">
             <asp:Button ID="btnAceptar" runat="server" Text="Confirmar Compra" CssClass="btn btn-success btn-lg" OnClick="btnAceptar_Click"  />
             <asp:Button ID="btnCancelar" runat="server" Text="Cancelar Compra" CssClass="btn btn-danger btn-lg" OnClick="btnCancelar_Click" />

@@ -206,14 +206,27 @@ Select Prod.Id, Prod.Codigo, prov.razonSocial as razonSocial, Prod.Descripcion, 
 _________________________________________
 Create table CompraOperacion(
 	Id int not null primary key identity(1,1),
-	IdProveedor int foreign key references proveedor(idProveedor),
-	FechaCompra datetime,
-	--
-	IdProducto int foreign key references Productos(Id),
-	Cantidad int not null,
-	Total money
+	IdProveedor int not null foreign key references proveedor(idProveedor),
+	FechaCompra datetime not null,
+	Total money not null
 );
 
+--
+insert into CompraOperacion (IdProveedor, FechaCompra, Total)
+Values (2, 11/23/2022, 1100)
+--
+
+Create table CompraOperacionDetalle(
+	IdCompraOperacion int not null foreign key references CompraOperacion(Id),
+	IdProducto int not null foreign key references Productos(Id),
+	Cantidad int not null,
+	SubTotal money not null
+);
+
+insert into CompraOperacionDetalle (IdCompraOperacion, IdProducto, Cantidad, SubTotal) values (1, 2, 4, 1200)
+
+
+__________________________________________
 
 --drop table Usuarios
 
