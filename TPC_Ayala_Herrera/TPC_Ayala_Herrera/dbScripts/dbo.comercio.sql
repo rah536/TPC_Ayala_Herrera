@@ -243,8 +243,8 @@ select * from usuarios
 
 insert into Usuarios (Usuario, Pass, TipoUsuario) 
 values
-( 'administrador', 'administrador',1),
-( 'empleado', 'empleado',2)
+( 'admin', 'admin',1),
+( 'emple', 'emple',2)
 
 select id, usuario, pass, tipoUsuario from usuarios
 where usuario = @user and  pass = @pass
