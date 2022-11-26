@@ -26,33 +26,19 @@
                         <div class="collapse navbar-collapse lead" id="navbarNavAltMarkup">
                             <div class="navbar-nav">
                                 <a class="nav-link active" aria-current="page" href="Default.aspx">Inicio</a>
+                                <%if (Session["usuario"]!= null && ((Dominio.Usuario)Session["usuario"]).TipoUsuario == Dominio.TipoUsuario.ADMIN)
+                                    { %>
                                 <a class="nav-link" href="Productos.aspx">Productos</a>
+                                <%} %>
                                 <a class="nav-link" href="Clientes.aspx">Clientes</a>
                                 <a class="nav-link" href="Proveedores.aspx">Proveedores</a>
                                 <a class="nav-link" href="Marcas.aspx">Marcas</a>
                                 <a class="nav-link" href="Categorias.aspx">Categorias</a>
                                 <a class="nav-link" href="Compras.aspx">Compras</a>
                                 <a class="nav-link" href="Ventas.aspx">Ventas</a>
+                                <a class="nav-link" href="Login.aspx">Login</a>
                                                <div class="collapse navbar-collapse lead flex-sm-grow-0">
-                            <div class="navbar-nav">
-                                <li class="nav-item dropdown">
-                                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    'Login'
-                                  </a>
-                                  <ul class="dropdown-menu" >
-                                      <li><a class="dropdown-item" href="#">
-                                      <asp:Label ID="lbUsuario" runat="server" Text="Usuario" CssClass="form-label"></asp:Label>
-                                      <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control"></asp:TextBox>
-                                      <asp:Label ID="lbContraseña" runat="server" Text="Contraseña" CssClass="form-label"></asp:Label>
-                                      <asp:TextBox ID="txtContaseña" runat="server" CssClass="form-control"></asp:TextBox>
-
-                                       <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" CssClass="btn btn-success"/>
-
-                                    </a></li>
-                                    
-                                  </ul>
-                                </li>
-                            </div>
+                         
                         </div>
                             </div>
                         </div>

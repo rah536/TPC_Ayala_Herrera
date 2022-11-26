@@ -15,6 +15,13 @@ namespace TPC_Ayala_Herrera
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["usuario"] == null) {
+
+
+                Session.Add("error", "debes loguearte para ingresar");
+                Response.Redirect("Error.aspx", false);
+            
+            }
             ProductoNegocio productoNegocio = new ProductoNegocio();
             gvProductos.DataSource = productoNegocio.listar();
             gvProductos.DataBind();

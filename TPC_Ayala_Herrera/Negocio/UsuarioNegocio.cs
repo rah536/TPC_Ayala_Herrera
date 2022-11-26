@@ -21,12 +21,13 @@ namespace Negocio
 				datos.setearParametro("@user", usuario.User);
 				datos.setearParametro("@pass", usuario.Pass);
 
-				datos.ejecutarAccion();
+				//datos.ejecutarAccion();
+				datos.ejecutarLectura();
 				while (datos.Lector.Read())
 				{
 
 					usuario.Id = (int)datos.Lector["Id"];
-					usuario.tipoUsuario = (int)(datos.Lector["tipoUsuario"]) == 1 ? Usuario.TipoUsuario.ADMIN : Usuario.TipoUsuario.NOMAL;
+					usuario.TipoUsuario = (int)(datos.Lector["tipoUsuario"]) == 1 ? TipoUsuario.ADMIN : TipoUsuario.NORMAL;
 					return true;
 
 
