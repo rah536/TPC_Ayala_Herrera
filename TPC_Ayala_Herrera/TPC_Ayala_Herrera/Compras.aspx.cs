@@ -14,7 +14,7 @@ namespace TPC_Ayala_Herrera
         static int IdProveedor;
         static int IdProducto;
         static List<CompraOperacionDetalle> opDetalles = new List<CompraOperacionDetalle>();
-        static float TotalaPagar;
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -75,9 +75,6 @@ namespace TPC_Ayala_Herrera
                 compraOp.Proveedor = new Proveedor();
                 compraOp.Proveedor.Id = IdProveedor;
                 //IdProveedor lo obtengo de lo que elegi en el primer ddl
-                
-                //compraOp.FechaCompra = DateTime.Now;
-                //le inserto la fecha con getdate() en la query
 
                 //completo el detalle
                 CompraOperacionDetalle compraOpDetalle = new CompraOperacionDetalle();
@@ -108,8 +105,10 @@ namespace TPC_Ayala_Herrera
                 gvCompras.DataBind();
 
                 //acumulo los subtotal en variable TotalaPagar
-                TotalaPagar += (compraOpDetalle.Cantidad * compraOpDetalle.SubTotal);
-                lblTotal.Text = TotalaPagar.ToString();
+                ActualizarValores(true);
+
+                //Vacio los textbox
+                VaciarTxt();
             }
         }
 
@@ -120,7 +119,7 @@ namespace TPC_Ayala_Herrera
             CompraOperacion compraOp = new CompraOperacion();
             compraOp.Proveedor = new Proveedor();
             compraOp.Proveedor.Id = IdProveedor;
-            compraOp.Total = TotalaPagar;
+            compraOp.Total = ActualizarValores(true);
             compraOp.FechaCompra = DateTime.Now;
 
             //Completo el detalle para guardar en db
@@ -156,6 +155,55 @@ namespace TPC_Ayala_Herrera
         {
             PanelAgregadoOk.Visible = false;
             Response.Redirect("Compras.aspx", false);
+        }
+
+        protected void VaciarTxt()
+        {
+            txtCantidadIngreso.Text = "";
+            txtCostoUnidad.Text = "";
+            txtPorcentajeGanancia.Text = "";
+            txtStockMinimo.Text = "";
+        }
+
+        protected void gvCompras_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            //elimina filas de la grilla
+            int id = gvCompras.Rows[e.RowIndex].RowIndex;
+            opDetalles.RemoveAt(id);
+            gvCompras.DataSource = opDetalles;
+            gvCompras.DataBind();
+            ActualizarValores(true);
+        }
+
+        protected void btnVaciarGrilla_Click(object sender, EventArgs e)
+        {
+            opDetalles.Clear();
+            gvCompras.DataSource = opDetalles;
+            gvCompras.DataBind();
+            ActualizarValores(false);
+        }
+
+        protected float ActualizarValores(bool T)
+        {
+            float TotalaPagar = 0;
+
+            if (T == true)
+            {
+                foreach (CompraOperacionDetalle item in opDetalles)
+                {
+                    TotalaPagar += (item.Cantidad * item.SubTotal);
+                }
+                lblTotal.Text = TotalaPagar.ToString();
+
+            }
+
+            else
+            {
+                TotalaPagar = 0;
+                lblTotal.Text = TotalaPagar.ToString();
+            }
+
+            return TotalaPagar;
         }
     }
 }

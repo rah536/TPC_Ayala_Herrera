@@ -159,13 +159,13 @@ namespace TPC_Ayala_Herrera
         protected global::System.Web.UI.WebControls.Label lblTotal;
 
         /// <summary>
-        /// Control btnVaciar.
+        /// Control btnVaciarGrilla.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVaciar;
+        protected global::System.Web.UI.WebControls.Button btnVaciarGrilla;
 
         /// <summary>
         /// Control PanelAgregadoOk.

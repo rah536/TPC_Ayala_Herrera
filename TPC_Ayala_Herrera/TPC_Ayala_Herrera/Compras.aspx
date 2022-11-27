@@ -33,7 +33,7 @@
             </div>
 
             <div class="col-6 m-auto">
-            <asp:GridView ID="gvCompras" CssClass="table table-striped" AutoGenerateColumns="false" runat="server">
+            <asp:GridView ID="gvCompras" OnRowDeleting="gvCompras_RowDeleting" CssClass="table table-striped" AutoGenerateColumns="false" runat="server">
                 <Columns>
                     <asp:BoundField HeaderText="Codigo" DataField="Producto.Codigo"/>
                     <asp:BoundField HeaderText="Descripción" DataField="Producto.Descripcion"/>
@@ -49,7 +49,7 @@
                         <asp:Label ID="lblTotal" CssClass="form-text" runat="server" Text="0"></asp:Label>
                     </div>
                     <div class="col-2">
-                        <asp:Button ID="btnVaciar" runat="server" Text="Vaciar" CssClass="btn btn-dark btn-lg" />
+                        <asp:Button ID="btnVaciarGrilla" runat="server" Text="Vaciar" CssClass="btn btn-dark btn-lg" OnClick="btnVaciarGrilla_Click" />
                     </div>
                 </div>
             </div>
