@@ -59,24 +59,15 @@ namespace TPC_Ayala_Herrera
                     {
                         txtCodigo.Text = item.Codigo.ToString();
                         txtDescripcion.Text = item.Descripcion;
-                        txtCantidadIngreso.Visible = false; //esto solo se ve al agregar, no al modificar
-                        txtCostoUnidad.Text = item.CostoUnidad.ToString();
-                        txtStockActual.Text = item.StockActual.ToString();
-                        txtStockMinimo.Text = item.StockMinimo.ToString();
-                        txtPorcentajeGanancia.Text = item.PorcentajeGanancia.ToString();
                         txtUrlImagen.Text = item.UrlImagen;
 
-                        //falta precargar los ddl
-                        //ddlProveedor.SelectedValue = item.Proveedor.IdProveedor.ToString();
-
+                        ddlProveedor.SelectedValue = item.Proveedor.Id.ToString();
+                        ddlMarca.SelectedValue = item.Marca.Id.ToString();
+                        ddlCategoria.SelectedValue = item.Categoria.Id.ToString();
                     }
                 }
             }
-            else
-            {
-                txtStockActual.Visible = false;  //al DAR DE ALTA el stockACtual lo
-                lblStockActual.Visible = false; //manejamos con la var cantidad de ingreso
-            }
+            
         }
 
         protected void btnAceptar_Click(object sender, EventArgs e)
@@ -96,20 +87,17 @@ namespace TPC_Ayala_Herrera
             producto.Categoria = new Categoria();
             producto.Categoria.Id = int.Parse(ddlCategoria.SelectedValue);
 
-            producto.CostoUnidad = float.Parse(txtCostoUnidad.Text);
-
-
-            producto.StockMinimo = int.Parse(txtStockMinimo.Text);
-
-
-            producto.PorcentajeGanancia = float.Parse(txtPorcentajeGanancia.Text);
+            //stock, % ganancia y costos, se manejan en -Compras-
+            producto.CostoUnidad = 0;
+            producto.StockMinimo = 0;
+            producto.PorcentajeGanancia = 0;
             producto.UrlImagen = txtUrlImagen.Text;
 
             if (Request.QueryString["id"] != null) //Modificar
             {
                 try
                 {
-                    producto.StockActual = int.Parse(txtStockActual.Text);
+                    producto.StockActual = 0;
                     producto.Id = int.Parse(Request.QueryString["id"]);
                     productoNegocio.modificar(producto);
                     PanelModificadoOk.Visible = true;
@@ -126,7 +114,7 @@ namespace TPC_Ayala_Herrera
                 try 
                 {
                     //cantidad de ingreso existe solo si damos de alta productos
-                    int CantidadIngreso = int.Parse(txtCantidadIngreso.Text);
+                    int CantidadIngreso = 0;
                     productoNegocio.agregar(producto, CantidadIngreso);
                     PanelAgregadoOk.Visible = true;
                 }

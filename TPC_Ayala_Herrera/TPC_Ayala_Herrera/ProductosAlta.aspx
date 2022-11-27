@@ -25,21 +25,6 @@
                 <asp:Label ID="lblCategoria" runat="server" Text="Categoría"></asp:Label>
                 <asp:DropDownList ID="ddlCategoria" CssClass="btn btn-outline-dark dropdown-toggle" runat="server"></asp:DropDownList><br />
                 
-                <asp:Label ID="lblCostoUnidad" runat="server" Text="CostoUnidad"></asp:Label> 
-                <asp:TextBox ID="txtCostoUnidad" runat="server" CssClass="form-text"></asp:TextBox> <br />
-                
-                <asp:Label ID="lblCantidadIngreso" runat="server" Text="Cantidad de productos a ingresar"></asp:Label> 
-                <asp:TextBox ID="txtCantidadIngreso" runat="server" CssClass="form-text"></asp:TextBox> <br />
-                
-                <asp:Label ID="lblStockMinimo" runat="server" Text="Stock Mínimo"></asp:Label> 
-                <asp:TextBox ID="txtStockMinimo" runat="server" CssClass="form-text"></asp:TextBox> <br />
-
-                <asp:Label ID="lblStockActual" runat="server" Text="Stock Actual"></asp:Label> 
-                <asp:TextBox ID="txtStockActual" runat="server" CssClass="form-text"></asp:TextBox> <br />
-
-                <asp:Label ID="lblPorcentajeGanancia" runat="server" Text="PorcentajeGanancia"></asp:Label> 
-                <asp:TextBox ID="txtPorcentajeGanancia" runat="server" CssClass="form-text"></asp:TextBox> <br />
-                
                 <asp:Label ID="lblUrlImagen" runat="server" Text="UrlImagen"></asp:Label> 
                 <asp:TextBox ID="txtUrlImagen" runat="server" CssClass="form-text"></asp:TextBox> <br />
             
