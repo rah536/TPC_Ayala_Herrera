@@ -4,9 +4,34 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
       <div class="card text-center">
         <div class="card-header">
-            <h3>Formulario de Compra</h3>
+            <h3>Compra</h3>
         </div>
+
         <div class="card-body fs-5">
+             <div>
+                <p>
+                  <button class="btn btn-dark btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    Ver historial de compras
+                  </button>
+                </p>
+                <div class="collapse" id="collapseExample">
+                  <div class="card card-body col-6 m-auto">
+                      <asp:GridView ID="gvHistorialCompras" OnRowEditing="gvHistorialCompras_RowEditing" CssClass="table table-striped" AutoGenerateColumns="false" runat="server">
+                        <Columns>
+                            <asp:BoundField HeaderText="Id Compra" DataField="Id"/>
+                            <asp:BoundField HeaderText="Proveedor" DataField="Proveedor.RazonSocial"/>
+                            <asp:BoundField HeaderText="Fecha Compra" DataField="FechaCompra" />
+                            <asp:BoundField HeaderText="Total" DataField="Total" />
+                            <asp:CommandField ShowEditButton="true" EditText="Detalle de Compra" ControlStyle-CssClass="btn btn-warning" HeaderText="Detalle" />
+                        </Columns>
+                      </asp:GridView>
+                  </div>
+                </div>
+            </div>
+
+
+            <br />
+            <h4>Formulario de Compra</h4>
             <div class="form-text col-6 m-auto">
                 <div class="m-4 accordion-button fs-5">
                     <asp:Label ID="lblProveedor" runat="server" Text="Proveedor"></asp:Label>

@@ -30,7 +30,9 @@ namespace TPC_Ayala_Herrera
                     ddlProveedor.DataValueField = "IdProveedor";
                     ddlProveedor.DataBind();
 
-
+                    CompraNegocio compraNegocio = new CompraNegocio();
+                    gvHistorialCompras.DataSource = compraNegocio.listarHistorial();
+                    gvHistorialCompras.DataBind();
                 }
             }
             catch (Exception ex)
@@ -204,6 +206,13 @@ namespace TPC_Ayala_Herrera
             }
 
             return TotalaPagar;
+        }
+
+        protected void gvHistorialCompras_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            //Redirigir a pagina para ver detalle
+            var id = gvHistorialCompras.Rows[e.NewEditIndex].Cells[0].Text;
+            Response.Redirect("ComprasDetalle.aspx?id=" + id, false);
         }
     }
 }
