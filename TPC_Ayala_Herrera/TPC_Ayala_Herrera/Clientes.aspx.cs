@@ -68,5 +68,25 @@ namespace TPC_Ayala_Herrera
         {
             PanelEliminadoOk.Visible = false;
         }
+
+        protected void btnFiltro_Click(object sender, EventArgs e)
+        {
+            ClienteNegocio clienteNegocio = new ClienteNegocio();
+            List<Cliente> listaFiltrada = clienteNegocio.listar();
+            if (txtFiltro.Text != "")
+            {
+                listaFiltrada = listaFiltrada.FindAll(x => x.Nombre.ToUpper().Contains(txtFiltro.Text.ToUpper()) || x.Apellido.ToUpper().Contains(txtFiltro.Text.ToUpper()) || x.Dni.ToString().Contains(txtFiltro.Text.ToUpper()) || x.NumCliente.ToString().Contains(txtFiltro.Text.ToUpper()));
+            }
+            gvClientes.DataSource = listaFiltrada;
+            gvClientes.DataBind();
+        }
+
+        protected void ibtnBorrarFiltro_Click(object sender, ImageClickEventArgs e)
+        {
+            ClienteNegocio clienteNegocio = new ClienteNegocio();
+            gvClientes.DataSource = clienteNegocio.listar();
+            gvClientes.DataBind();
+            txtFiltro.Text = "";
+        }
     }
 }

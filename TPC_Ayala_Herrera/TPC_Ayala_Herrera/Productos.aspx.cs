@@ -82,6 +82,26 @@ namespace TPC_Ayala_Herrera
         {
             PanelEliminadoOk.Visible = false;
         }
+
+        protected void btnFiltro_Click(object sender, EventArgs e)
+        {
+            ProductoNegocio productoNegocio = new ProductoNegocio();
+            List<Producto> listaFiltrada = productoNegocio.listar();
+            if (txtFiltro.Text != "")
+            {
+                listaFiltrada = listaFiltrada.FindAll(x => x.Descripcion.ToUpper().Contains(txtFiltro.Text.ToUpper()) || x.Proveedor.RazonSocial.ToUpper().Contains(txtFiltro.Text.ToUpper()) || x.Codigo.ToString().Contains(txtFiltro.Text.ToUpper()) || x.Marca.Descripcion.ToUpper().Contains(txtFiltro.Text.ToUpper()) || x.Categoria.Descripcion.ToUpper().Contains(txtFiltro.Text.ToUpper()));
+            }
+            gvProductos.DataSource = listaFiltrada;
+            gvProductos.DataBind();
+        }
+
+        protected void ibtnBorrarFiltro_Click(object sender, ImageClickEventArgs e)
+        {
+            ProductoNegocio productoNegocio = new ProductoNegocio();
+            gvProductos.DataSource = productoNegocio.listar();
+            gvProductos.DataBind();
+            txtFiltro.Text = "";
+        }
     }
 
 

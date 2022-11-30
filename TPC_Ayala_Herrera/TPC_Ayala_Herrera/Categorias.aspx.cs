@@ -67,5 +67,25 @@ namespace TPC_Ayala_Herrera
         {
             PanelEliminadoOk.Visible = false;
         }
+
+        protected void btnFiltro_Click(object sender, EventArgs e)
+        {
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+            List<Categoria> listaFiltrada = categoriaNegocio.listar();
+            if (txtFiltro.Text != "")
+            {
+                listaFiltrada = listaFiltrada.FindAll(x => x.Descripcion.ToUpper().Contains(txtFiltro.Text.ToUpper()));
+            }
+            gvCategorias.DataSource = listaFiltrada;
+            gvCategorias.DataBind();
+        }
+
+        protected void ibtnBorrarFiltro_Click(object sender, ImageClickEventArgs e)
+        {
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+            gvCategorias.DataSource = categoriaNegocio.listar();
+            gvCategorias.DataBind();
+            txtFiltro.Text = "";
+        }
     }
 }

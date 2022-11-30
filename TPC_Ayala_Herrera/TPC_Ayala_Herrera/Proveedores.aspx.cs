@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Dominio;
 
 namespace TPC_Ayala_Herrera
 {
@@ -70,6 +71,26 @@ namespace TPC_Ayala_Herrera
         protected void btnCerrarPanelEliminadoOk_Click(object sender, EventArgs e)
         {
             PanelEliminadoOk.Visible = false;
+        }
+
+        protected void btnFiltro_Click(object sender, EventArgs e)
+        {
+            ProveedorNegocio proveedorNegocio = new ProveedorNegocio();
+            List<Proveedor>listaFiltrada = proveedorNegocio.listar();
+            if (txtFiltro.Text != "")
+            {
+                listaFiltrada = listaFiltrada.FindAll(x => x.Nombre.ToUpper().Contains(txtFiltro.Text.ToUpper()) || x.Apellido.ToUpper().Contains(txtFiltro.Text.ToUpper()) || x.Dni.ToString().Contains(txtFiltro.Text.ToUpper()) || x.RazonSocial.ToUpper().Contains(txtFiltro.Text.ToUpper()));
+            }
+            gvProveedor.DataSource = listaFiltrada;
+            gvProveedor.DataBind();
+        }
+
+        protected void ibtnBorrarFiltro_Click(object sender, ImageClickEventArgs e)
+        {
+            ProveedorNegocio proveedorNegocio = new ProveedorNegocio();
+            gvProveedor.DataSource = proveedorNegocio.listar();
+            gvProveedor.DataBind();
+            txtFiltro.Text = "";
         }
     }
 }

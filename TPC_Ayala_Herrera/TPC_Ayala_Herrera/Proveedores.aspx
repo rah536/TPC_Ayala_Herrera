@@ -13,6 +13,14 @@
             </div>
         </div>
         <div class="card-body col-16 m-auto">
+            <div>
+                <asp:Label ID="lblFiltro" runat="server" Text="Filtro"></asp:Label>
+                <asp:TextBox ID="txtFiltro" runat="server"></asp:TextBox>
+                <asp:Button ID="btnFiltro" OnClick="btnFiltro_Click" runat="server" CssClass="btn btn-secondary" Text="Buscar" />
+                <asp:ImageButton ID="ibtnBorrarFiltro" OnClick="ibtnBorrarFiltro_Click" CssClass="align-middle m-1 btn" ImageUrl="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAdxJREFUSEvFlo1Nw0AMhV8nASYBJilMAkxCmQSYBJgE9NA5enm1L3eIqpaitLnEn3/vvMOZZHcmLv4CvgRwA+ACwFcz/BPA24wTo2DC9gAeO8oD/jJixBZ4BOi2hAFPAPg7lR6Y0FcAvIcwnLze213DzvDzCiH0toJXYCr8MCX3AyF0Y0t4BaanYT3zyrCNiqcnhWfgZwB3jTILVeMepBgPABixRRxML+kthZZemZv0pioYX+N/OkGd/GaVKgertywM7U0q4Dqt99BXa1or1EWdv+JgFhRf9tCoAlqvcI+SV3LUyyqCClYFWW6Zd3ocaSCcbRWp4XOPEp9prpd1Bati5oOKXRyuPZ5B+b06tOitwCyqqogUHoZVUK5rmpZIKlhD0gOrBxr2Xq9/NwtTj1XhSNg0DV5wupamcKa43FMaF73a8zyNpILLnrM8efV6wXk76d6w8LyPtef8UAhAloZqTaO02hsc7BuFb5lJh3Uf6WGzMnjrkDja3CfIU4dE9F0MAL1q7dmg0OywKYe9/xoEqm20O2Vm0wSt5xWjT0Toum2NPvqUU8sphj0aszlAbIEjj/SeeYvJJMtv1APH23K6jA9HwWoAjYhTKYb6kw30E1009uqsx2NaB976AZMmmh/4QY5AAAAAAElFTkSuQmCC" runat="server" />
+            </div>
+            <br />
+
             <asp:GridView ID="gvProveedor" AutoGenerateColumns="false" runat="server"  OnSelectedIndexChanged="gvProveedor_SelectedIndexChanged" OnRowDeleting ="gvProveedor_RowDeleting"  CssClass="table table-striped">
                 <Columns>
                     <asp:BoundField HeaderText="ID" DataField="idProveedor" />
