@@ -33,6 +33,15 @@ namespace TPC_Ayala_Herrera
         protected global::System.Web.UI.WebControls.TextBox txtNombre;
 
         /// <summary>
+        /// Control rfvNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre;
+
+        /// <summary>
         /// Control lblApellido.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace TPC_Ayala_Herrera
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtApellido;
+
+        /// <summary>
+        /// Control rfvApellido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvApellido;
 
         /// <summary>
         /// Control lblDni.
@@ -69,6 +87,24 @@ namespace TPC_Ayala_Herrera
         protected global::System.Web.UI.WebControls.TextBox txtDni;
 
         /// <summary>
+        /// Control revDni.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revDni;
+
+        /// <summary>
+        /// Control rfvDni.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDni;
+
+        /// <summary>
         /// Control lblCuit.
         /// </summary>
         /// <remarks>
@@ -85,6 +121,15 @@ namespace TPC_Ayala_Herrera
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCuit;
+
+        /// <summary>
+        /// Control revCuit.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revCuit;
 
         /// <summary>
         /// Control lblDomicilio.
@@ -123,6 +168,15 @@ namespace TPC_Ayala_Herrera
         protected global::System.Web.UI.WebControls.TextBox txtMail;
 
         /// <summary>
+        /// Control revMail.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revMail;
+
+        /// <summary>
         /// Control lblTelefono.
         /// </summary>
         /// <remarks>
@@ -157,6 +211,15 @@ namespace TPC_Ayala_Herrera
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNumCliente;
+
+        /// <summary>
+        /// Control rfvNumcliente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNumcliente;
 
         /// <summary>
         /// Control PanelModificadoOk.

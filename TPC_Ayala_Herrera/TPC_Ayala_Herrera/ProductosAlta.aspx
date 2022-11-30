@@ -9,25 +9,33 @@
 
         <div class="card-body fs-5">
             <div class="form-text btn-group-vertical m-auto">
-
-                <asp:Label ID="lblCodigo" runat="server" Text="Código"></asp:Label> 
-                <asp:TextBox ID="txtCodigo" runat="server" CssClass="form-text"></asp:TextBox> <br />
-                
-                <asp:Label ID="lblDescripcion" runat="server" Text="Descripción"></asp:Label> 
-                <asp:TextBox ID="txtDescripcion" runat="server" CssClass="form-text"></asp:TextBox> <br />
-                
-                <asp:Label ID="lblProveedor" runat="server" Text="Proveedor"></asp:Label>
-                <asp:DropDownList ID="ddlProveedor" CssClass="btn btn-outline-dark dropdown-toggle" runat="server"></asp:DropDownList><br />
-                
-                <asp:Label ID="lblMarca" runat="server" Text="Marca"></asp:Label>
-                <asp:DropDownList ID="ddlMarca" CssClass="btn btn-outline-dark dropdown-toggle" runat="server"></asp:DropDownList><br />
-                
-                <asp:Label ID="lblCategoria" runat="server" Text="Categoría"></asp:Label>
-                <asp:DropDownList ID="ddlCategoria" CssClass="btn btn-outline-dark dropdown-toggle" runat="server"></asp:DropDownList><br />
-                
-                <asp:Label ID="lblUrlImagen" runat="server" Text="UrlImagen"></asp:Label> 
-                <asp:TextBox ID="txtUrlImagen" runat="server" CssClass="form-text"></asp:TextBox> <br />
-            
+                <div class="mb-1">
+                    <asp:Label ID="lblCodigo" runat="server" Text="Código"></asp:Label> 
+                    <asp:TextBox ID="txtCodigo" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:RegularExpressionValidator ID="revCodigo" runat="server" ErrorMessage="Ingresar solo números" ControlToValidate="txtCodigo" ValidationExpression="^\d+$" style="color:red;"></asp:RegularExpressionValidator><br />
+                    <asp:RequiredFieldValidator ID="rfvCodigo" runat="server" ErrorMessage="Ingrese Código de Producto" ControlToValidate="txtCodigo" style="color:red;"></asp:RequiredFieldValidator>
+                </div>
+                <div class="mb-3">
+                    <asp:Label ID="lblDescripcion" runat="server" Text="Descripción"></asp:Label> 
+                    <asp:TextBox ID="txtDescripcion" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ErrorMessage="Ingrese Descripción" ControlToValidate="txtDescripcion" style="color:red;"></asp:RequiredFieldValidator>
+                </div>
+                <div class="mb-5 col-8">
+                    <asp:Label ID="lblProveedor" runat="server" Text="Proveedor"></asp:Label>
+                    <asp:DropDownList ID="ddlProveedor" CssClass=" btn btn-outline-dark dropdown-toggle" runat="server"></asp:DropDownList><br />
+                </div>
+                <div class="mb-5 row-cols-1">
+                    <asp:Label ID="lblMarca" runat="server" Text="Marca"></asp:Label>
+                    <asp:DropDownList ID="ddlMarca" CssClass="btn btn-outline-dark dropdown-toggle" runat="server"></asp:DropDownList><br />
+                </div>
+                <div class="mb-5 row-cols-sm-1">
+                    <asp:Label ID="lblCategoria" runat="server" Text="Categoría"></asp:Label>
+                    <asp:DropDownList ID="ddlCategoria" CssClass="btn btn-outline-dark dropdown-toggle" runat="server"></asp:DropDownList><br />
+                </div>
+                <div class="mb-3">
+                    <asp:Label ID="lblUrlImagen" runat="server" Text="UrlImagen"></asp:Label> 
+                    <asp:TextBox ID="txtUrlImagen" runat="server" CssClass="form-control"></asp:TextBox> <br />
+                </div>
             </div>
         </div>
 

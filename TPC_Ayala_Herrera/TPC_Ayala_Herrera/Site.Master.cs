@@ -11,10 +11,11 @@ namespace TPC_Ayala_Herrera
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Page.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
 
         }
 
-      
+
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {

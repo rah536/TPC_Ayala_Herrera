@@ -9,23 +9,46 @@
 
         <div class="card-body fs-5">
             <div class="form-text btn-group-vertical m-auto">
-                <asp:Label ID="lblNombre" runat="server" Text="Nombre:   "></asp:Label> 
-                <asp:TextBox ID="txtNombre" runat="server" CssClass="form-text"></asp:TextBox> <br />
-                <asp:Label ID="lblApellido" runat="server" Text="Apellido:   "></asp:Label>
-                <asp:TextBox ID="txtApellido" runat="server" CssClass="form-text"></asp:TextBox> <br />
-                <asp:Label ID="lblDni" runat="server" Text="DNI:   "></asp:Label>
-                <asp:TextBox ID="txtDni" runat="server" CssClass="form-text"></asp:TextBox> <br />
-                <asp:Label ID="lblCuit" runat="server" Text="Cuit:   "></asp:Label>
-                <asp:TextBox ID="txtCuit" runat="server" CssClass="form-text"></asp:TextBox> <br />
-                <asp:Label ID="lblDomicilio" runat="server" Text="Domicilio:   "></asp:Label>
-                <asp:TextBox ID="txtDomicilio" runat="server" CssClass="form-text"></asp:TextBox> <br />
-                <asp:Label ID="lblMail" runat="server" Text="Mail:   "></asp:Label>
-                <asp:TextBox ID="txtMail" runat="server" CssClass="form-text"></asp:TextBox> <br />
-                <asp:Label ID="lblTelefono" runat="server" Text="Teléfono:   "></asp:Label>
-                <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-text"></asp:TextBox> <br />
-                <asp:Label ID="lblNumCliente" runat="server" Text="Número de cliente:   "></asp:Label>
-                <asp:TextBox ID="txtNumCliente" runat="server" CssClass="form-text"></asp:TextBox> <br />
-                
+                <div class="mb-3">
+                    <asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label> 
+                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ErrorMessage="Ingrese Nombre" ControlToValidate="txtNombre" style="color:red;"></asp:RequiredFieldValidator>
+                </div>
+                <div class="mb-3">
+                    <asp:Label ID="lblApellido" runat="server" Text="Apellido"></asp:Label>
+                    <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvApellido" runat="server" ErrorMessage="Ingrese apellido" ControlToValidate="txtApellido" style="color:red;"></asp:RequiredFieldValidator>
+                </div>
+                <div class="mb-1">
+                    <asp:Label ID="lblDni" runat="server" Text="DNI"></asp:Label>
+                    <asp:TextBox ID="txtDni" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:RegularExpressionValidator ID="revDni" runat="server" ErrorMessage="Ingresar solo números" ControlToValidate="txtDni" ValidationExpression="^\d+$" style="color:red;"></asp:RegularExpressionValidator><br />
+                    <asp:RequiredFieldValidator ID="rfvDni" runat="server" ErrorMessage="Ingrese DNI" ControlToValidate="txtDni" style="color:red;"></asp:RequiredFieldValidator>
+                </div> 
+                <div class="mb-3">
+                    <asp:Label ID="lblCuit" runat="server" Text="Cuit"></asp:Label>
+                    <asp:TextBox ID="txtCuit" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:RegularExpressionValidator ID="revCuit" runat="server" ErrorMessage="Ingresar solo números" ControlToValidate="txtCuit" ValidationExpression="^\d+$" style="color: red;"></asp:RegularExpressionValidator>
+                </div>
+                <div class="mb-3">
+                    <asp:Label ID="lblDomicilio" runat="server" Text="Domicilio"></asp:Label>
+                    <asp:TextBox ID="txtDomicilio" runat="server" CssClass="form-control"></asp:TextBox> <br />
+                </div>
+                <div class="mb-3">
+                    <asp:Label ID="lblMail" runat="server" Text="Mail"></asp:Label>
+                    <asp:TextBox ID="txtMail" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:RegularExpressionValidator ID="revMail" runat="server" ErrorMessage="Email invalido" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" style="color:red;" ControlToValidate="txtMail"></asp:RegularExpressionValidator>
+                </div>
+                <div class="mb-3">
+                    <asp:Label ID="lblTelefono" runat="server" Text="Teléfono:   "></asp:Label>
+                    <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control"></asp:TextBox> <br />
+                </div>
+                <div class="mb-3">
+                    <asp:Label ID="lblNumCliente" runat="server" Text="Número de cliente:   "></asp:Label>
+                    <asp:TextBox ID="txtNumCliente" runat="server" CssClass="form-control"></asp:TextBox> <br />
+                    <asp:RequiredFieldValidator ID="rfvNumcliente" runat="server" ErrorMessage="Ingrese Número de Cliente" ControlToValidate="txtNumCliente" style="color:red;"></asp:RequiredFieldValidator>
+                </div>
+                 
             </div>
         </div>
 

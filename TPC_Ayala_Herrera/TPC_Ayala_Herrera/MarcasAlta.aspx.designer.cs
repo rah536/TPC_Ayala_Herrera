@@ -33,6 +33,15 @@ namespace TPC_Ayala_Herrera
         protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
 
         /// <summary>
+        /// Control rfvDescripcion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDescripcion;
+
+        /// <summary>
         /// Control PanelModificadoOk.
         /// </summary>
         /// <remarks>

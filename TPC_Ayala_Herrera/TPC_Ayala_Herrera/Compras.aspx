@@ -42,17 +42,30 @@
                 </div>
 
                 <div class="border border-5 rounded-end alert">
-                    <asp:Label ID="lblCostoUnidad" runat="server" Text="Ingrese el Costo por unidad"></asp:Label> 
-                    <asp:TextBox ID="txtCostoUnidad" runat="server" CssClass="form-text"></asp:TextBox> <br />
-                
-                    <asp:Label ID="lblCantidadIngreso" runat="server" Text="Cantidad de productos a ingresar"></asp:Label> 
-                    <asp:TextBox ID="txtCantidadIngreso" runat="server" CssClass="form-text"></asp:TextBox> <br />
-                
-                    <asp:Label ID="lblStockMinimo" runat="server" Text="Ingrese el stock minimo de productos"></asp:Label> 
-                    <asp:TextBox ID="txtStockMinimo" runat="server" CssClass="form-text"></asp:TextBox> <br />
-                
-                    <asp:Label ID="lblPorcentajeGanancia" runat="server" Text="Ingrese el % de ganancia por unidad"></asp:Label> 
-                    <asp:TextBox ID="txtPorcentajeGanancia" runat="server" CssClass="form-text"></asp:TextBox> <br />
+                    <div class="mb-1">
+                        <asp:Label ID="lblCostoUnidad" runat="server" Text="Ingrese el Costo por unidad"></asp:Label> 
+                        <asp:TextBox ID="txtCostoUnidad" runat="server" CssClass="form-text"></asp:TextBox> <br />
+                        <asp:RequiredFieldValidator ID="rfvCostoUnidad" runat="server" ErrorMessage="Ingrese Costo Unidad" ControlToValidate="txtCostoUnidad" style="color:red;"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="revCostoUnidad" runat="server" ErrorMessage="Ingresar solo números" ControlToValidate="txtCostoUnidad" ValidationExpression="^\d+$" style="color:red;"></asp:RegularExpressionValidator>
+                    </div>
+                    <div class="mb-1">
+                        <asp:Label ID="lblCantidadIngreso" runat="server" Text="Cantidad de productos a ingresar"></asp:Label> 
+                        <asp:TextBox ID="txtCantidadIngreso" runat="server" CssClass="form-text"></asp:TextBox> <br />
+                        <asp:RequiredFieldValidator ID="rfvCantidadIngreso" runat="server" ErrorMessage="Ingrese Cantidad Stock" ControlToValidate="txtCantidadIngreso" style="color:red;"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="revCantidadIngreso" runat="server" ErrorMessage="Ingresar solo números" ControlToValidate="txtCantidadIngreso" ValidationExpression="^\d+$" style="color:red;"></asp:RegularExpressionValidator>
+                    </div>
+                    <div class="mb-1">
+                        <asp:Label ID="lblStockMinimo" runat="server" Text="Ingrese el stock minimo de productos"></asp:Label> 
+                        <asp:TextBox ID="txtStockMinimo" runat="server" CssClass="form-text"></asp:TextBox> <br />
+                        <asp:RequiredFieldValidator ID="rfvStockMinimo" runat="server" ErrorMessage="Ingrese Stock Minimo" ControlToValidate="txtStockMinimo" style="color:red;"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="revStockMinimo" runat="server" ErrorMessage="Ingresar solo números" ControlToValidate="txtStockMinimo" ValidationExpression="^\d+$" style="color:red;"></asp:RegularExpressionValidator>
+                    </div>
+                    <div class="mb-1">
+                        <asp:Label ID="lblPorcentajeGanancia" runat="server" Text="Ingrese el % de ganancia por unidad"></asp:Label> 
+                        <asp:TextBox ID="txtPorcentajeGanancia" runat="server" CssClass="form-text"></asp:TextBox> <br />
+                        <asp:RequiredFieldValidator ID="rfvPorcentajeGanancia" runat="server" ErrorMessage="Ingrese el Porcentaje" ControlToValidate="txtPorcentajeGanancia" style="color:red;"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="revPorcentajeGanancia" runat="server" ErrorMessage="Ingresar solo números" ControlToValidate="txtPorcentajeGanancia" ValidationExpression="^\d+$" style="color:red;"></asp:RegularExpressionValidator>
+                    </div>
                 </div>
                 <asp:Button ID="btnAgregar" runat="server" Text="Agregar" CssClass="btn btn-dark btn-lg" OnClick="btnAgregar_Click"  /> <br />
             </div>

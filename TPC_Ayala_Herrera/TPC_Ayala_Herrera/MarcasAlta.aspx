@@ -11,6 +11,7 @@
             <div class="d-inline-flex mt-4">
                 <asp:Label ID="lblDescripcion" runat="server" Text="Descripción:   "></asp:Label>
                 <asp:TextBox ID="txtDescripcion" runat="server" CssClass="form-text"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ErrorMessage="Ingrese Descripción" ControlToValidate="txtDescripcion" style="color:red;"></asp:RequiredFieldValidator>
             </div>
         </div>
 
