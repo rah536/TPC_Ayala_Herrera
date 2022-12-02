@@ -25,6 +25,8 @@ namespace TPC_Ayala_Herrera
             {
                 if (!IsPostBack)
                 {
+                    
+
                     ddlProveedor.DataSource = proveedorNegocio.listar();
                     ddlProveedor.DataTextField = "RazonSocial";
                     ddlProveedor.DataValueField = "IdProveedor";
@@ -59,6 +61,8 @@ namespace TPC_Ayala_Herrera
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
+            gvCompras.DataSource = null;
+            gvCompras.DataBind();
             ProveedorNegocio proveedorNegocio = new ProveedorNegocio();
             List<Proveedor> listaProveedor = proveedorNegocio.listar();
 
@@ -161,10 +165,10 @@ namespace TPC_Ayala_Herrera
 
         protected void VaciarTxt()
         {
-            txtCantidadIngreso.Text = "";
-            txtCostoUnidad.Text = "";
-            txtPorcentajeGanancia.Text = "";
-            txtStockMinimo.Text = "";
+            txtCantidadIngreso.Text = "0";
+            txtCostoUnidad.Text = "0";
+            txtPorcentajeGanancia.Text = "0";
+            txtStockMinimo.Text = "0";
         }
 
         protected void gvCompras_RowDeleting(object sender, GridViewDeleteEventArgs e)
