@@ -18,34 +18,74 @@ namespace TPC_Ayala_Herrera
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
-            Usuario usuario;
+            Usuario usuario = new Usuario();
             UsuarioNegocio negocio = new UsuarioNegocio();
 
             try
             {
-                usuario = new Usuario(txtUsuario.Text, txtContaseña.Text, false);
-                if (negocio.Loguear(usuario))
+
+                usuario.Email = txtmailUsuario.Text;
+                usuario.Password = txtContaseña.Text;
+                if (negocio.Login(usuario))
                 {
                     Session.Add("usuario", usuario);
-                    Response.Redirect("Default.aspx");
-
-
+                    Response.Redirect("Default.aspx",false);
                 }
-                else
-                {
-                    Session.Add("error", "user o pass incorrectos");
-                    Response.Redirect("Error.aspx", false);
-
-                }
-
+                else {
+                    Session.Add("error", "Email o Password incorrecto!!!");
+                    Response.Redirect("Error.aspx",false);
+                        }
             }
             catch (Exception ex)
             {
+
                 Session.Add("error", ex.ToString());
-                throw;
             }
 
 
         }
+
+
+
+
+
+
+
+
+
+
+
+        /*
+protected void btnIngresar_Click(object sender, EventArgs e)
+{
+   Usuario usuario;
+   UsuarioNegocio negocio = new UsuarioNegocio();
+
+   try
+   {
+       usuario = new Usuario(txtUsuario.Text, txtContaseña.Text, false);
+       if (negocio.Loguear(usuario))
+       {
+           Session.Add("usuario", usuario);
+           Response.Redirect("Default.aspx");
+
+
+       }
+       else
+       {
+           Session.Add("error", "user o pass incorrectos");
+           Response.Redirect("Error.aspx", false);
+
+       }
+
+   }
+   catch (Exception ex)
+   {
+       Session.Add("error", ex.ToString());
+       throw;
+   }
+
+
+}*/
     }
 }

@@ -43,6 +43,25 @@ namespace Negocio
                 throw ex;
             }
         }
+
+        public int ejecutarAccionScalar()
+        {
+            comando.Connection = conexion;
+            try
+            {
+                conexion.Open();
+               return  int.Parse(comando.ExecuteScalar().ToString());
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+
+
+
         public void ejecutarAccion()
         {
             comando.Connection = conexion;
@@ -68,5 +87,14 @@ namespace Negocio
                 lector.Close();
             conexion.Close();
         }
+
+
+        public void setearProcedimiento(string sp)
+        {
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = sp;
+
+        }
+
     }
 }

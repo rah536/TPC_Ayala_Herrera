@@ -15,22 +15,22 @@ namespace TPC_Ayala_Herrera
     {
 
         /// <summary>
-        /// Control lbUsuario.
+        /// Control lblMailUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbUsuario;
+        protected global::System.Web.UI.WebControls.Label lblMailUsuario;
 
         /// <summary>
-        /// Control txtUsuario.
+        /// Control txtmailUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUsuario;
+        protected global::System.Web.UI.WebControls.TextBox txtmailUsuario;
 
         /// <summary>
         /// Control lbContraseña.

@@ -26,18 +26,18 @@
                         <div class="collapse navbar-collapse lead" id="navbarNavAltMarkup">
                             <div class="navbar-nav">
                                 <a class="nav-link active" aria-current="page" href="Default.aspx">Inicio</a>
-                                <%if (Session["usuario"]!= null && ((Dominio.Usuario)Session["usuario"]).TipoUsuario == Dominio.TipoUsuario.ADMIN)
-                                    { %>
+                                
                                 <a class="nav-link" href="Productos.aspx">Productos</a>
-                                <%} %>
+                           
                                 <a class="nav-link" href="Clientes.aspx">Clientes</a>
                                 <a class="nav-link" href="Proveedores.aspx">Proveedores</a>
                                 <a class="nav-link" href="Marcas.aspx">Marcas</a>
                                 <a class="nav-link" href="Categorias.aspx">Categorias</a>
                                 <a class="nav-link" href="Compras.aspx">Compras</a>
                                 <a class="nav-link" href="Ventas.aspx">Ventas</a>
-                                <a class="nav-link" href="Login.aspx">Login</a>
-                                               <div class="collapse navbar-collapse lead flex-sm-grow-0">
+                                <a class="nav-link" href="AltaUsuario.aspx">Alta Usuario</a>
+                                <a class="nav-link"  href="Login.aspx">Login</a>
+                                <div class="collapse navbar-collapse lead flex-sm-grow-0">
                          
                         </div>
                             </div>

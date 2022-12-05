@@ -14,7 +14,12 @@ namespace TPC_Ayala_Herrera
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Seguridad.esAdmin(Session["usuario"]))
 
+            {
+               Response.Redirect("Error.aspx", false);
+
+            }
 
             if (Request.QueryString["id"] != null && !IsPostBack) //Si el link viene con un id, cargo los datos en los textbox
             {

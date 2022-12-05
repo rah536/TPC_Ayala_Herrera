@@ -64,6 +64,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AltaUsuario.aspx" />
     <Content Include="Categorias.aspx" />
     <Content Include="CategoriasAlta.aspx" />
     <Content Include="Clientes.aspx" />
@@ -85,6 +86,13 @@
     <Content Include="ProveedoresAlta.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AltaUsuario.aspx.cs">
+      <DependentUpon>AltaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltaUsuario.aspx.designer.cs">
+      <DependentUpon>AltaUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Categorias.aspx.cs">
       <DependentUpon>Categorias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

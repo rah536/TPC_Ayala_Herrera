@@ -228,23 +228,31 @@ insert into CompraOperacionDetalle (IdCompraOperacion, IdProducto, Cantidad, Sub
 
 __________________________________________
 
---drop table Usuarios
+drop table Usuarios
 
 Create table Usuarios (
 
 	Id  int  primary key identity,
-	Usuario varchar(50),
-	Pass varchar (50),
-	TipoUsuario int not null
+	Email varchar(50) null,
+	Nombre varchar(50) null,
+	Apellido varchar(50) null,
+	Pass varchar (50) null,
+	Admin bit null
 
 
 )
 select * from usuarios
 
-insert into Usuarios (Usuario, Pass, TipoUsuario) 
-values
-( 'admin', 'admin',1),
-( 'emple', 'emple',2)
+Select email, pass , admin from usuarios
 
-select id, usuario, pass, tipoUsuario from usuarios
+insert into Usuarios (Email, Nombre, Apellido, Pass, Admin) 
+values
+( '@.com', 'Nombre_Admin','Apellido_Admin','123',1),
+( '@.com', 'Nombre_Emple', 'Apellido_Emple','456',0)
+
+select id, usuario, pass, administrador from usuarios
 where usuario = @user and  pass = @pass
+
+select * from cliente
+
+delete  from cliente where id =1

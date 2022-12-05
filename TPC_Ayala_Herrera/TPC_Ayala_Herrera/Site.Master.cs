@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Negocio;
 
 namespace TPC_Ayala_Herrera
 {
@@ -11,6 +12,12 @@ namespace TPC_Ayala_Herrera
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(!(Page is Login || Page is Default)) { 
+            if (!Seguridad.sesionActiva(Session["usuario"]))
+            {
+                Response.Redirect("Login.aspx", false);
+            }
+            }
             Page.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
 
         }
