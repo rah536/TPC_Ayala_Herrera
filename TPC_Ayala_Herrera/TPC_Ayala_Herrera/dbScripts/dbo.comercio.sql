@@ -228,7 +228,7 @@ insert into CompraOperacionDetalle (IdCompraOperacion, IdProducto, Cantidad, Sub
 
 __________________________________________
 
-drop table Usuarios
+--drop table Usuarios
 
 Create table Usuarios (
 
@@ -241,18 +241,23 @@ Create table Usuarios (
 
 
 )
+
+
+---------ejecutar desde el procedimiento para abajo para poder acceder
 select * from usuarios
 
-Select email, pass , admin from usuarios
+create procedure insertarNuevo
+@email varchar (50),
+@nombre varchar (50),
+@apellido varchar(50),
+@pass varchar(50),
+@admin bit
+as
+insert into Usuarios(Email, Nombre, Apellido, Pass, Admin)
+output inserted.id
+values (@email, @nombre, @apellido, @pass,@admin)
 
-insert into Usuarios (Email, Nombre, Apellido, Pass, Admin) 
-values
-( '@.com', 'Nombre_Admin','Apellido_Admin','123',1),
-( '@.com', 'Nombre_Emple', 'Apellido_Emple','456',0)
+exec insertarnuevo 'admin','admin','admin','admin',1
+exec insertarnuevo 'noAdmin','noAdmin','noAdmin','noAdmin',0
 
-select id, usuario, pass, administrador from usuarios
-where usuario = @user and  pass = @pass
 
-select * from cliente
-
-delete  from cliente where id =1
