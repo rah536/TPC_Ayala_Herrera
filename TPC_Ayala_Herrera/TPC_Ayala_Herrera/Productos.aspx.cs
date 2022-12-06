@@ -23,15 +23,34 @@ namespace TPC_Ayala_Herrera
 
         protected void gvProductos_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (!Seguridad.esAdmin(Session["usuario"]))
+
+            {
+                Session.Add("error", "Debes ser Administrador para acceder a esta opcion.");
+                Response.Redirect("Error.aspx", false);
+
+            }
+            else { 
             var id = gvProductos.SelectedRow.Cells[0].Text;
             Response.Redirect("ProductosAlta.aspx?id=" + id, false);
+            }
         }
 
         protected void gvProductos_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+            if (!Seguridad.esAdmin(Session["usuario"]))
+
+            {
+                Session.Add("error", "Debes ser Administrador para acceder a esta opcion.");
+                Response.Redirect("Error.aspx", false);
+
+            }
+
+            else { 
             Panel1.Visible = true;
             var id = gvProductos.Rows[e.RowIndex].Cells[0].Text;
             id2 = id;
+            }
         }
 
         protected void btnPanelAceptar_Click(object sender, EventArgs e)
@@ -62,6 +81,13 @@ namespace TPC_Ayala_Herrera
 
         protected void btnAltaProducto_Click(object sender, EventArgs e)
         {
+            if (!Seguridad.esAdmin(Session["usuario"]))
+
+            {
+                Session.Add("error", "Debes ser Administrador para acceder a esta opcion.");
+                Response.Redirect("Error.aspx", false);
+
+            }
             Response.Redirect("ProductosAlta.aspx", false);
         }
 

@@ -17,6 +17,7 @@ namespace TPC_Ayala_Herrera
             if (!Seguridad.esAdmin(Session["usuario"]))
 
             {
+                Session.Add("error", "Debes ser Administrador para acceder a esta opcion.");
                Response.Redirect("Error.aspx", false);
 
             }
