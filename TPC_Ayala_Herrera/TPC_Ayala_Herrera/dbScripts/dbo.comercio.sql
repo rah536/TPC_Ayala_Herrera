@@ -260,4 +260,19 @@ values (@email, @nombre, @apellido, @pass,@admin)
 exec insertarnuevo 'admin','admin','admin','admin',1
 exec insertarnuevo 'noAdmin','noAdmin','noAdmin','noAdmin',0
 
+______________________________________
+VENTAS
 
+Create table VentaOperacion(
+	Id int not null primary key identity(1,1),
+	IdCliente int not null foreign key references Cliente(Id),
+	FechaVenta date not null,
+	Total money not null
+);
+
+Create table VentaOperacionDetalle(
+	IdVentaOperacion int not null foreign key references VentaOperacion(Id),
+	IdProducto int not null foreign key references Productos(Id),
+	Cantidad int not null,
+	SubTotal money not null
+);

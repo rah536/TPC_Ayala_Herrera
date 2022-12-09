@@ -34,7 +34,7 @@ namespace Negocio
                     aux.Marca.Descripcion = (string)datos.Lector["Marca"];
                     aux.Categoria = new Categoria();
                     aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
-                    //aux.CostoUnidad = (float)Convert.ToDecimal(datos.Lector["CostoUnidad"]);
+                    aux.CostoUnidad = (float)Convert.ToDecimal(datos.Lector["CostoUnidad"]);
                     aux.StockActual = (int)datos.Lector["StockActual"];
                     aux.StockMinimo = (int)datos.Lector["StockMinimo"];
                     aux.PorcentajeGanancia = (float)Convert.ToDecimal(datos.Lector["PorcentajeGanancia"]);

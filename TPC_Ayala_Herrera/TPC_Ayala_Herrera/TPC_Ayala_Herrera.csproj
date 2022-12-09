@@ -82,6 +82,7 @@
     <Content Include="ProductosDetalle.aspx" />
     <Content Include="Proveedores.aspx" />
     <Content Include="Ventas.aspx" />
+    <Content Include="VentasDetalle.aspx" />
     <Content Include="Web.config" />
     <Content Include="ProveedoresAlta.aspx" />
   </ItemGroup>
@@ -222,6 +223,13 @@
     </Compile>
     <Compile Include="ProveedoresAlta.aspx.designer.cs">
       <DependentUpon>ProveedoresAlta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VentasDetalle.aspx.cs">
+      <DependentUpon>VentasDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VentasDetalle.aspx.designer.cs">
+      <DependentUpon>VentasDetalle.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
