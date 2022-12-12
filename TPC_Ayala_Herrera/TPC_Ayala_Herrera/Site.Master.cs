@@ -12,11 +12,11 @@ namespace TPC_Ayala_Herrera
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!(Page is Login || Page is Default)) { 
-            if (!Seguridad.sesionActiva(Session["usuario"]))
-            {
-                Response.Redirect("Login.aspx", false);
-            }
+            if (!(Page is Login || Page is Default)) {
+                if (!Seguridad.sesionActiva(Session["usuario"]))
+                {
+                    Response.Redirect("Login.aspx", false);
+                }
             }
             Page.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
 
@@ -37,7 +37,21 @@ namespace TPC_Ayala_Herrera
 
                 Session.Add("error", ex.ToString());
             }
-            
+
+
+        }
+
+        protected void btnLog_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("login.aspx");
+        }
+
+
+
+        protected void btnSalir_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("Login.aspx");
 
         }
     }

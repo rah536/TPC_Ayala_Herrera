@@ -14,6 +14,15 @@ namespace TPC_Ayala_Herrera
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (!Seguridad.esAdmin(Session["usuario"]))
+            {
+                Session.Add("error", "Debes ser administrador para acceder a esta pagina.");
+                Response.Redirect("Error.aspx");
+
+            }
+
+
+
         }
 
         protected void btnAltaUsuario_Click(object sender, EventArgs e)
@@ -27,7 +36,7 @@ namespace TPC_Ayala_Herrera
                 empleado.Nombre = (string)txtNombre.Text;
                 empleado.Apellido = (string)txtContaseña.Text;
                 empleado.Password = (string)txtContaseña.Text;
-                empleado.Admin = false;
+                empleado.Admin = ckbAdmin.Checked;
 
 
                 int id = usuarioNegocio.insertarNuevo(empleado);

@@ -12,9 +12,9 @@
 
         </div>
         <div>
-
+            <h6>
             <asp:Label Text="" ID="lblMensaje" runat="server" />
-
+            </h6>
         </div>
 
     </div>

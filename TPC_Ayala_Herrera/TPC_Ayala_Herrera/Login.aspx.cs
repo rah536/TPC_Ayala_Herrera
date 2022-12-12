@@ -26,10 +26,12 @@ namespace TPC_Ayala_Herrera
 
                 usuario.Email = txtmailUsuario.Text;
                 usuario.Password = txtContaseña.Text;
+              
                 if (negocio.Login(usuario))
                 {
                     Session.Add("usuario", usuario);
-                    Response.Redirect("Default.aspx",false);
+                    PanelLoginOk.Visible=true;
+                   // Response.Redirect("Default.aspx",false);
                 }
                 else {
                     Session.Add("error", "Email o Password incorrecto!!!");
@@ -42,6 +44,18 @@ namespace TPC_Ayala_Herrera
                 Session.Add("error", ex.ToString());
             }
 
+
+        }
+
+
+
+        
+
+    
+        protected void btnLoginOk_Click(object sender, EventArgs e)
+        {
+            PanelLoginOk.Visible = false;
+            Response.Redirect("Default.aspx", false);
 
         }
 

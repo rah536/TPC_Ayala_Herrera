@@ -13,6 +13,14 @@ namespace TPC_Ayala_Herrera
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Seguridad.esAdmin(Session["usuario"]))
+            {
+                Session.Add("error", "Debes ser administrador para acceder a esta pagina.");
+                Response.Redirect("Error.aspx");
+
+            }
+
+
             if (Request.QueryString["id"] != null && !IsPostBack) //Si el link viene con un id, cargo los datos en los textbox
             {
 

@@ -9,6 +9,9 @@
 
 
             <div class="card-body col-3 m-auto">
+     <div class="card-header bg-transparent">
+            <h3>Login</h3>
+        </div>
                 <div class="mb-6">
 
                     <asp:Label ID="lblMailUsuario" runat="server" Text="Email Usuario" CssClass="form-label"></asp:Label>
@@ -20,7 +23,13 @@
 
                 </div>
 
+
             </div>
+             <asp:Panel ID="PanelLoginOk" visible="false" BackColor="lightgray" cssclass="modal modal-content m-auto p-3 text-center fixed-bottom position-absolute border-5 border-dark" Height="180px" Width="350px" runat="server">
+            <h5><asp:Label ID="lblLogin" runat="server" Text="Te has logueado."></asp:Label></h5>
+            <asp:Button ID="btnLoginOk" CssClass="btn btn-primary mt-md-5" runat="server" Text="Cerrar" OnClick="btnLoginOk_Click" />
+        </asp:Panel>
+
         </div>
 
 

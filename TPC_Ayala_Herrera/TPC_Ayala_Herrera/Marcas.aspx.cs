@@ -21,16 +21,38 @@ namespace TPC_Ayala_Herrera
 
         protected void gvMarcas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var id = gvMarcas.SelectedRow.Cells[0].Text;
-            //Redirigir a pagina para modificar
-            Response.Redirect("MarcasAlta.aspx?id=" + id, false);
+            if (!Seguridad.esAdmin(Session["usuario"]))
+
+            {
+                Session.Add("error", "Debes ser Administrador para acceder a esta opcion.");
+                Response.Redirect("Error.aspx", false);
+
+            }
+
+            else
+            {
+                var id = gvMarcas.SelectedRow.Cells[0].Text;
+                //Redirigir a pagina para modificar
+                Response.Redirect("MarcasAlta.aspx?id=" + id, false);
+            }
         }
 
         protected void gvMarcas_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            Panel1.Visible = true;
-            var id = gvMarcas.Rows[e.RowIndex].Cells[0].Text;
-            id2 = id;
+            if (!Seguridad.esAdmin(Session["usuario"]))
+
+            {
+                Session.Add("error", "Debes ser Administrador para acceder a esta opcion.");
+                Response.Redirect("Error.aspx", false);
+
+            }
+
+            else
+            {
+                Panel1.Visible = true;
+                var id = gvMarcas.Rows[e.RowIndex].Cells[0].Text;
+                id2 = id;
+            }
         }
 
         protected void btnPanelAceptar_Click(object sender, EventArgs e)
@@ -60,7 +82,18 @@ namespace TPC_Ayala_Herrera
 
         protected void btnAltaMarca_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MarcasAlta.aspx", false);
+            if (!Seguridad.esAdmin(Session["usuario"]))
+
+            {
+                Session.Add("error", "Debes ser Administrador para acceder a esta opcion.");
+                Response.Redirect("Error.aspx", false);
+
+            }
+
+            else
+            {
+                Response.Redirect("MarcasAlta.aspx", false);
+            }
         }
 
         protected void btnCerrarPanelEliminadoOk_Click(object sender, EventArgs e)

@@ -21,16 +21,38 @@ namespace TPC_Ayala_Herrera
 
         protected void gvCategorias_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var id = gvCategorias.SelectedRow.Cells[0].Text;
-            //Redirigir a pagina para modificar
-            Response.Redirect("CategoriasAlta.aspx?id=" + id, false);
+            if (!Seguridad.esAdmin(Session["usuario"]))
+
+            {
+                Session.Add("error", "Debes ser Administrador para acceder a esta opcion.");
+                Response.Redirect("Error.aspx", false);
+
+            }
+
+            else
+            {
+                var id = gvCategorias.SelectedRow.Cells[0].Text;
+                //Redirigir a pagina para modificar
+                Response.Redirect("CategoriasAlta.aspx?id=" + id, false);
+            }
         }
 
         protected void gvCategorias_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            Panel1.Visible = true;
-            var id = gvCategorias.Rows[e.RowIndex].Cells[0].Text;
-            id2 = id;
+            if (!Seguridad.esAdmin(Session["usuario"]))
+
+            {
+                Session.Add("error", "Debes ser Administrador para acceder a esta opcion.");
+                Response.Redirect("Error.aspx", false);
+
+            }
+
+            else
+            {
+                Panel1.Visible = true;
+                var id = gvCategorias.Rows[e.RowIndex].Cells[0].Text;
+                id2 = id;
+            }
         }
 
         protected void btnPanelAceptar_Click(object sender, EventArgs e)
