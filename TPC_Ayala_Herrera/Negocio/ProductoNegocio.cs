@@ -106,7 +106,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("update Productos set Codigo = " + producto.Codigo + ", IdProveedor = " + producto.Proveedor.Id + ", Descripcion = '" + producto.Descripcion + "', IdMarca = " + producto.Marca.Id + ", IdCategoria = " + producto.Categoria.Id + ", CostoUnidad = " + producto.CostoUnidad + ", StockActual = " + producto.StockActual + ", StockMinimo = " + producto.StockMinimo + ", PorcentajeGanancia = " + producto.PorcentajeGanancia + ", UrlImagen = '" + producto.UrlImagen + "' where Id = " + producto.Id + "");
+                datos.setearConsulta("update Productos set Codigo = " + producto.Codigo + ", IdProveedor = " + producto.Proveedor.Id + ", Descripcion = '" + producto.Descripcion + "', IdMarca = " + producto.Marca.Id + ", IdCategoria = " + producto.Categoria.Id + ", StockMinimo = " + producto.StockMinimo + ", PorcentajeGanancia = " + producto.PorcentajeGanancia + ", UrlImagen = '" + producto.UrlImagen + "' where Id = " + producto.Id + "");
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
@@ -128,7 +128,7 @@ namespace Negocio
             {
                 try
                 {
-                    datos.setearConsulta("Update Productos set CostoUnidad = " + item.Producto.CostoUnidad + ", StockActual = " + item.Producto.StockActual + ", StockMinimo = " + item.Producto.StockMinimo + ", PorcentajeGanancia = " + item.Producto.PorcentajeGanancia + " where Id = " + item.Producto.Id + "");
+                    datos.setearConsulta("Update Productos set CostoUnidad = " + item.Producto.CostoUnidad + ", StockActual = " + item.Producto.StockActual + " where Id = " + item.Producto.Id + "");
                     datos.ejecutarAccion();
                 }
                 catch (Exception ex)

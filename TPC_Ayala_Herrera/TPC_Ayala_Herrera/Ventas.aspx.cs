@@ -59,6 +59,17 @@ namespace TPC_Ayala_Herrera
             {
                 txtCantidadProductos.ReadOnly = true;
             }
+
+            //mostrar stock disponible
+            List<int> stock = new List<int>();
+
+            for (int i = 0; i < int.Parse(txtStock.Text); i++)
+            {
+                stock.Add(i + 1);
+            }
+            ddlStock.DataSource = stock;
+            ddlStock.DataBind();
+
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
@@ -88,6 +99,7 @@ namespace TPC_Ayala_Herrera
                 vDetalle.Producto.Descripcion = item.Descripcion;
                 vDetalle.Producto.CostoUnidad = item.CostoUnidad;
             }
+            txtCantidadProductos.Text = ddlStock.SelectedItem.Value.ToString();
             vDetalle.Cantidad = int.Parse(txtCantidadProductos.Text);
             vDetalle.SubTotal = float.Parse(txtPrecioFinal.Text);
 

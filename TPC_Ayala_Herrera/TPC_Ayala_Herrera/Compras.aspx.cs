@@ -97,8 +97,8 @@ namespace TPC_Ayala_Herrera
                     compraOpDetalle.Producto.Descripcion = item.Descripcion;
                     compraOpDetalle.Producto.CostoUnidad = item.CostoUnidad;
                 }
-                compraOpDetalle.Producto.PorcentajeGanancia = float.Parse(txtPorcentajeGanancia.Text);
-                compraOpDetalle.Producto.StockMinimo = int.Parse(txtStockMinimo.Text);
+                //compraOpDetalle.Producto.PorcentajeGanancia = float.Parse(txtPorcentajeGanancia.Text);
+                //compraOpDetalle.Producto.StockMinimo = int.Parse(txtStockMinimo.Text);
                 compraOpDetalle.Producto.StockActual = int.Parse(txtCantidadIngreso.Text);
                 compraOpDetalle.Producto.CostoUnidad = float.Parse(txtCostoUnidad.Text);
                 compraOpDetalle.Cantidad = int.Parse(txtCantidadIngreso.Text);

@@ -150,24 +150,6 @@ namespace TPC_Ayala_Herrera
         protected global::System.Web.UI.WebControls.TextBox txtStockMinimo;
 
         /// <summary>
-        /// Control rfvStockMinimo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvStockMinimo;
-
-        /// <summary>
-        /// Control revStockMinimo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revStockMinimo;
-
-        /// <summary>
         /// Control lblPorcentajeGanancia.
         /// </summary>
         /// <remarks>
@@ -184,24 +166,6 @@ namespace TPC_Ayala_Herrera
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPorcentajeGanancia;
-
-        /// <summary>
-        /// Control rfvPorcentajeGanancia.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPorcentajeGanancia;
-
-        /// <summary>
-        /// Control revPorcentajeGanancia.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revPorcentajeGanancia;
 
         /// <summary>
         /// Control btnAgregar.

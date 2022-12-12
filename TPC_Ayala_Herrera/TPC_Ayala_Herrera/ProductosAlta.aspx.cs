@@ -60,7 +60,8 @@ namespace TPC_Ayala_Herrera
                         txtCodigo.Text = item.Codigo.ToString();
                         txtDescripcion.Text = item.Descripcion;
                         txtUrlImagen.Text = item.UrlImagen;
-
+                        txtPorcentajeGanancia.Text = item.PorcentajeGanancia.ToString();
+                        txtStockMinimo.Text = item.StockMinimo.ToString();
                         ddlProveedor.SelectedValue = item.Proveedor.Id.ToString();
                         ddlMarca.SelectedValue = item.Marca.Id.ToString();
                         ddlCategoria.SelectedValue = item.Categoria.Id.ToString();
@@ -89,8 +90,8 @@ namespace TPC_Ayala_Herrera
 
             //stock, % ganancia y costos, se manejan en -Compras-
             producto.CostoUnidad = 0;
-            producto.StockMinimo = 0;
-            producto.PorcentajeGanancia = 0;
+            producto.StockMinimo = int.Parse(txtStockMinimo.Text);
+            producto.PorcentajeGanancia = float.Parse(txtPorcentajeGanancia.Text);
             producto.UrlImagen = txtUrlImagen.Text;
 
             if (Request.QueryString["id"] != null) //Modificar

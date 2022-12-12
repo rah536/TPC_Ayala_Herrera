@@ -50,7 +50,11 @@
                 <div class="border border-5 rounded-end alert">
                     <div class="mb-1">
                         <asp:Label ID="lblCantidadProductos" runat="server" Text="Cantidad de Productos: "></asp:Label>
-                        <asp:TextBox ID="txtCantidadProductos" ReadOnly="false" runat="server" Text="0"></asp:TextBox>
+                        <asp:TextBox ID="txtCantidadProductos" visible="false" runat="server" Text="0"></asp:TextBox>
+                    </div>
+                    <div class="mb-1">
+                        <asp:Label ID="lblCantProd" runat="server" Text="Cantidad de Productos Disponibles: "></asp:Label>
+                        <asp:DropDownList ID="ddlStock" runat="server" Height="25px" Width="86px"></asp:DropDownList>
                     </div>
                     <div class="mb-1">
                         <asp:Label ID="lblPrecioUnidad" runat="server" Text="Precio por cada unidad: "></asp:Label>
@@ -90,7 +94,7 @@
         </div>
 
         <asp:Panel ID="PanelAgregadoOk" visible="false" BackColor="lightgray" cssclass="modal modal-content m-auto p-3 text-center fixed-bottom position-absolute border-5 border-dark" Height="180px" Width="350px" runat="server">
-            <h5><asp:Label ID="lblPanelAgregadoOk" runat="server" Text="Compra efectuada con éxito"></asp:Label></h5>
+            <h5><asp:Label ID="lblPanelAgregadoOk" runat="server" Text="Venta efectuada con éxito"></asp:Label></h5>
             <asp:Button ID="btnCerrarPanelAgregadoOk" CssClass="btn btn-primary mt-md-5" runat="server" Text="Cerrar"  OnClick="btnCerrarPanelAgregadoOk_Click"/>
         </asp:Panel>
 

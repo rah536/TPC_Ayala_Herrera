@@ -32,8 +32,19 @@
                     <asp:Label ID="lblCategoria" runat="server" Text="Categoría"></asp:Label>
                     <asp:DropDownList ID="ddlCategoria" CssClass="btn btn-outline-dark dropdown-toggle" runat="server"></asp:DropDownList><br />
                 </div>
+                <div class="mb-1">
+                    <asp:Label ID="lblStockMinimo" runat="server" Text="Stock Mínimo"></asp:Label> 
+                    <asp:TextBox ID="txtStockMinimo" runat="server" CssClass="form-control" Width="250px"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvStockMinimo" runat="server" ErrorMessage="Ingrese Stock Minimo" ControlToValidate="txtStockMinimo" style="color:red;"></asp:RequiredFieldValidator><br />
+                    <asp:RegularExpressionValidator ID="revStockMinimo" runat="server" ErrorMessage="Ingresar solo números" ControlToValidate="txtStockMinimo" ValidationExpression="^\d+$" style="color:red;"></asp:RegularExpressionValidator>
+                </div>
                 <div class="mb-3">
-                    <asp:Label ID="lblUrlImagen" runat="server" Text="UrlImagen"></asp:Label> 
+                    <asp:Label ID="lblPorcentajeGanancia" runat="server" Text="% Ganancia"></asp:Label> 
+                    <asp:TextBox ID="txtPorcentajeGanancia" runat="server" CssClass="form-control" Width="250px"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvPorcentajeGanancia" runat="server" ErrorMessage="Ingrese el Porcentaje" ControlToValidate="txtPorcentajeGanancia" style="color:red;"></asp:RequiredFieldValidator><br />
+                </div>
+                <div class="mb-3">
+                    <asp:Label ID="lblUrlImagen" runat="server" Text="Ingrese dirección de la imagen"></asp:Label> 
                     <asp:TextBox ID="txtUrlImagen" runat="server" CssClass="form-control"></asp:TextBox> <br />
                 </div>
             </div>
