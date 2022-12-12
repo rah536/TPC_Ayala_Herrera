@@ -270,6 +270,11 @@ Create table VentaOperacion(
 	Total money not null
 );
 
+--
+alter table VentaOperacion
+alter column FechaVenta datetime not null
+--
+
 Create table VentaOperacionDetalle(
 	IdVentaOperacion int not null foreign key references VentaOperacion(Id),
 	IdProducto int not null foreign key references Productos(Id),

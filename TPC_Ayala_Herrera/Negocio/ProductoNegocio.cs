@@ -126,9 +126,11 @@ namespace Negocio
 
             foreach (CompraOperacionDetalle item in opDetalle)
             {
+
                 try
                 {
-                    datos.setearConsulta("Update Productos set CostoUnidad = " + item.Producto.CostoUnidad + ", StockActual = " + item.Producto.StockActual + " where Id = " + item.Producto.Id + "");
+                    //datos.setearConsulta("Update Productos set CostoUnidad = " + item.Producto.CostoUnidad + ", StockActual = " + item.Producto.StockActual + " where Id = " + item.Producto.Id + "");
+                    datos.setearConsulta("Update Productos set CostoUnidad = " + item.Producto.CostoUnidad + ", StockActual = (Select StockActual +" + item.Producto.StockActual + ") where Id = " + item.Producto.Id + "");
                     datos.ejecutarAccion();
                 }
                 catch (Exception ex)
@@ -142,6 +144,31 @@ namespace Negocio
                 }
             }
 
+        }
+
+        public void actualizarStock(List<VentaOperacionDetalle> opDetalle)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            foreach (VentaOperacionDetalle item in opDetalle)
+            {
+
+                try
+                {
+                    //datos.setearConsulta("Update Productos set CostoUnidad = " + item.Producto.CostoUnidad + ", StockActual = " + item.Producto.StockActual + " where Id = " + item.Producto.Id + "");
+                    datos.setearConsulta("Update Productos set StockActual = (Select StockActual -" + item.Cantidad + ") where Id = " + item.Producto.Id + "");
+                    datos.ejecutarAccion();
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+                finally
+                {
+                    datos.cerrarConexion();
+                }
+            }
         }
     }
 }

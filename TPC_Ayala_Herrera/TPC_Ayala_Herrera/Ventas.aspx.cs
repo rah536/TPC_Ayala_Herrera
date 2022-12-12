@@ -135,7 +135,7 @@ namespace TPC_Ayala_Herrera
                         int IdOp = ventaNegocio.rescatarIdOperacion();
                         //agregamos detalles de la Operacion
                         ventaNegocio.agregarDetalle(opDetalles, IdOp);
-                        PanelAgregadoOk.Visible = true;
+                        
                     }
                 }
                 else
@@ -149,6 +149,9 @@ namespace TPC_Ayala_Herrera
             }
 
             //Actualizar stock
+            ProductoNegocio productoNegocio = new ProductoNegocio();
+            productoNegocio.actualizarStock(opDetalles);
+            PanelAgregadoOk.Visible = true;
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
