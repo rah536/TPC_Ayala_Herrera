@@ -30,9 +30,20 @@ namespace TPC_Ayala_Herrera
         }
         protected void gvProveedor_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            Panel1.Visible = true;
-            var id = gvProveedor.Rows[e.RowIndex].Cells[0].Text;
-            id2 = id;
+            if (!Seguridad.esAdmin(Session["usuario"]))
+
+            {
+                Session.Add("error", "Debes ser Administrador para acceder a esta opcion.");
+                Response.Redirect("Error.aspx", false);
+
+            }
+
+            else
+            {
+                Panel1.Visible = true;
+                var id = gvProveedor.Rows[e.RowIndex].Cells[0].Text;
+                id2 = id;
+            }
         }
 
         public void btnPanelAceptarProveedor_Click(object sender, EventArgs e)

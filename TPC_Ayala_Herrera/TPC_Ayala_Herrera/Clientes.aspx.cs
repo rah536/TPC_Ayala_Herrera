@@ -22,16 +22,38 @@ namespace TPC_Ayala_Herrera
 
         protected void gvClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var id = gvClientes.SelectedRow.Cells[0].Text;
-            //Redirigir a pagina para modificar
-            Response.Redirect("ClientesAlta.aspx?id=" + id, false);
+            if (!Seguridad.esAdmin(Session["usuario"]))
+
+            {
+                Session.Add("error", "Debes ser Administrador para acceder a esta opcion.");
+                Response.Redirect("Error.aspx", false);
+
+            }
+
+            else
+            {
+                var id = gvClientes.SelectedRow.Cells[0].Text;
+                //Redirigir a pagina para modificar
+                Response.Redirect("ClientesAlta.aspx?id=" + id, false);
+
+            }
         }
 
         protected void gvClientes_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            Panel1.Visible = true;
+            if (!Seguridad.esAdmin(Session["usuario"]))
+
+            {
+                Session.Add("error", "Debes ser Administrador para acceder a esta opcion.");
+                Response.Redirect("Error.aspx", false);
+
+            }
+
+            else { 
+                Panel1.Visible = true;
             var id = gvClientes.Rows[e.RowIndex].Cells[0].Text;
             id2 = id;
+        }
         }
 
         protected void btnPanelAceptar_Click(object sender, EventArgs e)

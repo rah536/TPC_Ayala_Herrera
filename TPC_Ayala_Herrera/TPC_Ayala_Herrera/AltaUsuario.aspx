@@ -16,13 +16,22 @@
             <div class="card-body col-3 m-auto">
                 <div class="mb-6">
 
+                  
+                    
                     <asp:Label ID="lblNombre" runat="server" Text="Nombre" CssClass="form-label"></asp:Label>
                     <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ErrorMessage="Ingrese Nombre" ControlToValidate="txtNombre" style="color:red;"></asp:RequiredFieldValidator> <br />
+
                     <asp:Label ID="lblApellido" runat="server" Text="Apellido" CssClass="form-label"></asp:Label>
                     <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvApellido" runat="server" ErrorMessage="Ingrese apellido" ControlToValidate="txtApellido" style="color:red;"></asp:RequiredFieldValidator><br />
+
+                    
                     <asp:Label ID="lblEmail" runat="server" Text="Email" CssClass="form-label"></asp:Label>
                     <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control"></asp:TextBox>
-                    <asp:Label ID="lblContraseña" runat="server" Text="Contraseña" CssClass="form-label"></asp:Label>
+                     <asp:RegularExpressionValidator ID="revMail" runat="server" ErrorMessage="Email invalido" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" style="color:red;" ControlToValidate="txtEmail"></asp:RegularExpressionValidator><br />
+                  
+                    <asp:Label ID="lblContraseña" runat="server" Text="Contraseña" CssClass="form-label"></asp:Label><br />
                     <asp:TextBox ID="txtContaseña" runat="server" CssClass="form-control"></asp:TextBox>.
                    <br />
 
