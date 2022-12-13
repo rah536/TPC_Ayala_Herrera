@@ -22,6 +22,7 @@ namespace TPC_Ayala_Herrera
 
             if (!IsPostBack)
             {
+                opDetalles.Clear();
                 ddlCliente.DataSource = clienteNegocio.listar();
                 ddlCliente.DataTextField = "Apellido";
                 ddlCliente.DataValueField = "Id";

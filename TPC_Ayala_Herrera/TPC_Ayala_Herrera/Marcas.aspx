@@ -5,6 +5,7 @@
     <div class="card text-center">
         <div class="card-header bg-transparent">
             <div>
+                <img src="img/marca-categoria.png" alt="logoMarca" height="100" width="130" /><br />
                 <h2>Listado de Marcas</h2>
             </div>
              <div class="p-3">

@@ -6,6 +6,7 @@
     <div class="card text-center">
         <div class="card-header bg-transparent">
             <div>
+                <img src="img/cliente-proveedor2.png" alt="logoclienteproveedor" height="120" width="140" /><br />
                 <h2>Listado de Proveedores</h2>
             </div>
             <div class="p-3">

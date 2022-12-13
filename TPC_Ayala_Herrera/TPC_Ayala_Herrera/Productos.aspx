@@ -5,6 +5,7 @@
      <div class="card text-center">
         <div class="card-header bg-transparent">
             <div>
+                <img src="img/Productos.png" alt="logoProductos" height="120" width="180" /><br />
                 <h2>Listado de Productos</h2>
             </div>
             <div class="p-3">

@@ -12,7 +12,7 @@ namespace TPC_Ayala_Herrera
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!(Page is Login || Page is Default)) {
+            if (!(Page is Login || Page is Default || Page is Error)) {
                 if (!Seguridad.sesionActiva(Session["usuario"]))
                 {
                     Response.Redirect("Login.aspx", false);

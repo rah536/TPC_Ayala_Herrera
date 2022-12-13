@@ -4,7 +4,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
       <div class="card text-center">
         <div class="card-header">
-            <h3>Compra</h3>
+            <img src="img/compra.png" alt="logoCompra" height="120" width="120" /><br />
+            <h3>Compras</h3>
         </div>
 
         <div class="card-body fs-5">

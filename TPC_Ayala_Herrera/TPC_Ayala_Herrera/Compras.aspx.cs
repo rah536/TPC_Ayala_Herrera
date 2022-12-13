@@ -25,8 +25,8 @@ namespace TPC_Ayala_Herrera
             {
                 if (!IsPostBack)
                 {
-                    
 
+                    opDetalles.Clear();
                     ddlProveedor.DataSource = proveedorNegocio.listar();
                     ddlProveedor.DataTextField = "RazonSocial";
                     ddlProveedor.DataValueField = "IdProveedor";
@@ -61,8 +61,7 @@ namespace TPC_Ayala_Herrera
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            gvCompras.DataSource = null;
-            gvCompras.DataBind();
+            
             ProveedorNegocio proveedorNegocio = new ProveedorNegocio();
             List<Proveedor> listaProveedor = proveedorNegocio.listar();
 

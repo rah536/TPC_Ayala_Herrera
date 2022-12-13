@@ -42,8 +42,8 @@ namespace TPC_Ayala_Herrera
                 int id = usuarioNegocio.insertarNuevo(empleado);
 
 
-              //  Response.Redirect("default.aspx");
-                
+                //  Response.Redirect("default.aspx");
+                PanelAltaUsuarioOk.Visible = true;
             }
             catch (Exception ex)
             {
@@ -51,6 +51,12 @@ namespace TPC_Ayala_Herrera
                 Session.Add("error", ex.ToString());
 
             }
+        }
+
+        protected void btnCerrarAltaUsuarioOk_Click(object sender, EventArgs e)
+        {
+            PanelAltaUsuarioOk.Visible = false;
+            Response.Redirect("Default.aspx", false);
         }
     }
 }

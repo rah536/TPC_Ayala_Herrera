@@ -9,6 +9,7 @@
         <div class="card text-center">
 
             <div class="card-header">
+                <img src="img/login2.png" alt="logoLogin" height="100" width="100" /><br />
                 <h3>Alta de usuario</h3>
             </div>
 
@@ -40,6 +41,10 @@
                 </div>
 
             </div>
+            <asp:Panel ID="PanelAltaUsuarioOk" visible="false" BackColor="lightgray" cssclass="modal modal-content m-auto p-3 text-center fixed-bottom position-absolute border-5 border-dark" Height="180px" Width="350px" runat="server">
+            <h5><asp:Label ID="lblAltaUsuarioOk" runat="server" Text="El usuario ha sido dado de alta"></asp:Label></h5>
+            <asp:Button ID="btnCerrarAltaUsuarioOk" CssClass="btn btn-primary mt-md-5" runat="server" Text="Cerrar" OnClick="btnCerrarAltaUsuarioOk_Click"/>
+            </asp:Panel>
         </div>
     </div>
 
