@@ -17,7 +17,10 @@
 
                     <asp:Label ID="lblMailUsuario" runat="server" Text="Email Usuario" CssClass="form-label"></asp:Label>
                     <asp:TextBox ID="txtmailUsuario" runat="server" CssClass="form-control"></asp:TextBox>
+                     <asp:RegularExpressionValidator ID="revMail" runat="server" ErrorMessage="Email invalido" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" style="color:red;" ControlToValidate="txtmailUsuario"></asp:RegularExpressionValidator><br />
+
                     <asp:Label ID="lbContraseña" runat="server" Text="Contraseña" CssClass="form-label"></asp:Label>
+                   
                     <asp:TextBox ID="txtContaseña" runat="server" type="password" CssClass="form-control" ></asp:TextBox>
                     </br>
                     <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" CssClass="btn btn-success" />
